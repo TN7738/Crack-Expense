@@ -19,4 +19,4 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('Collect', userSchema);
+mongoose.model('User', userSchema);

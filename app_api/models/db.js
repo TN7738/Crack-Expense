@@ -42,4 +42,4 @@ process.once('SIGTERM', () => {
     });
 }); 
 
-require('./expense');
+require('./user');
