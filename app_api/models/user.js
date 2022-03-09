@@ -19,4 +19,4 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-mongoose.model('Expense', userSchema);
+mongoose.model('User', userSchema);

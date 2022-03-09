@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const cntrlImages = require('../controllers/expense');
+const cntrlImages = require('../controllers/user');
 
 // image items
 router

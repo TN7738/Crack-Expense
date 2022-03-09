@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-const expense = mongoose.model('Expense');
+const user = mongoose.model('User');
 
 const sendJSONResponse = (res, status, content) => {
     res.status(status);
@@ -7,7 +7,7 @@ const sendJSONResponse = (res, status, content) => {
 };
 
 const userListAll = (req, res) => {
-    expense
+    user
         .find()
         .exec((err, userdata) => {
             if (err) {
@@ -23,7 +23,7 @@ const userListAll = (req, res) => {
 };
 
 const userCreate = (req, res) => {
-    expense
+    user
         .create({
             firstName: req.body.firstName,
             lastName: req.body.lastName,
@@ -40,7 +40,7 @@ const userCreate = (req, res) => {
 
 const userReadOne = (req, res) => {
     if (req.params && req.params.userid) {
-        expense
+        user
             .findById(req.params.userid)
             .exec((err, userdata) => {
                 if (!userdata) {
@@ -63,7 +63,7 @@ const userUpdateOne = (req, res) => {
         sendJSONResponse(res, 404, { 'message': 'userid is required' });
         return;
     }
-    expense
+    user
         .findById(req.params.userid)
         .exec((err, userdata) => {
             if (!userdata) {
@@ -90,7 +90,7 @@ const userUpdateOne = (req, res) => {
 const userDeleteOne = (req, res) => {
     const userid = req.params.userid;
     if (userid) {
-        expense
+        user
             .findByIdAndRemove(userid)
             .exec((err, userdata) => {
                 if (err) {
