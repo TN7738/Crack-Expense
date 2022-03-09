@@ -1,9 +1,16 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
+const cntrlImages = require('../controllers/expense');
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+// image items
+router
+    .route('/user')
+    .get(cntrlImages.userListAll)
+    .post(cntrlImages.userCreate);
+router
+    .route('/user/:userid')
+    .get(cntrlImages.userReadOne)
+    .put(cntrlImages.userUpdateOne)
+    .delete(cntrlImages.userDeleteOne);
 
 module.exports = router;
