@@ -1,0 +1,12 @@
+import React from 'react';
+import './header.scss';
+
+const Header = () => {
+    return (
+        <div className='header-wrap'>
+            
+        </div>
+    );
+};
+    
+    export default Header;
