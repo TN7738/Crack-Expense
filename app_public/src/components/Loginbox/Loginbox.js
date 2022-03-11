@@ -10,7 +10,7 @@ const Loginbox = () => {
                 </div>
                 <input type="text" className="emailid" name="emailid" placeholder='Email' />
                 <input type="password" className="password" name="password" placeholder='Password' />
-                <a className="login-btn">Login</a>
+                <a className="login-btn">Log in</a>
             </div>
         </div>
     );
