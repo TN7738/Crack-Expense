@@ -1,8 +1,9 @@
-import Login from './components/Login';
+import React from "react";
+import Mainroutes from "./Routes/Mainroutes";
 
 function App() {
   return (
-    <Login />
+    <Mainroutes />
   );
 }
 
