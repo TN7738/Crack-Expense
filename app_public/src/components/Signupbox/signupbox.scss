@@ -1,4 +1,4 @@
-.loginbox-wrap{
+.signupbox-wrap{
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -26,7 +26,6 @@
             transform: translateX(-50%);
             top: -40px;
             background-color: #fff;
-            border: solid 1px #1d3557;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -35,7 +34,13 @@
                 height: 50px;
             }
         }
-        input[type=email], input[type=password]{
+        .title{
+                    color: aliceblue;
+                    margin-bottom: 29px;
+                    font-size: 25px;
+                }
+
+        input{
             width: 100%;
             border: 1px solid #000;
             outline: none;
@@ -45,19 +50,20 @@
             color: #000;
             font-size: 14px;
             padding: 0 20px;
-            &:first-of-type{
-                margin-bottom: 60px;
-            }
+            margin-bottom: 20px;
+            // &:first-of-type{
+            //     margin-bottom: 60px;
+            // }
             &::placeholder{
                 color: #000;
             }
         }
-        .login-btn{
+       .signup-btn{
             position: absolute;
             width: 80px;
             height: 80px;
             border-radius: 40px;
-            border: solid 1px #1d3557;
+            // border: solid 1px #333;
             display: flex;
             font-weight: 700;
             justify-content: center;
@@ -68,10 +74,5 @@
             transform: translateX(-50%);
             background-color: #fff;
         }
-    }.signup-link{
-        color:#fff;
-        transform: translateX(125%);
-        padding-top: 20px;
-
     }
 }
