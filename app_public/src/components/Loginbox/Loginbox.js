@@ -2,8 +2,8 @@ import React from 'react';
 import './loginbox.scss';
 import axios from 'axios';
 
-class Loginbox extends React.Component{
-    constructor(props){
+class Loginbox extends React.Component {
+    constructor(props) {
         super(props);
 
         this.onChangeEmail = this.onChangeEmail.bind(this);
@@ -16,20 +16,20 @@ class Loginbox extends React.Component{
         }
     }
 
-    onChangeEmail(e){
+    onChangeEmail(e) {
         this.setState({
             email: e.target.value
         });
     }
-    onChangePassword(e){
+    onChangePassword(e) {
         this.setState({
             password: e.target.value
         });
     }
 
-    onSubmit(e){
+    onSubmit(e) {
         e.preventDefault();
-        
+
         const userData = {
             email: this.state.email,
             password: this.state.password
@@ -39,12 +39,12 @@ class Loginbox extends React.Component{
             .then(res => {
                 const foundEmail = res.data.some(el => el.email === userData.email);
                 const foundPassword = res.data.some(el => el.password === userData.password);
-                if(foundEmail && foundPassword){
+                if (foundEmail && foundPassword) {
                     console.log("Logged in");
                 }
             });
     }
-    render(){
+    render() {
         return (
             <div className='loginbox-wrap'>
                 <div className='container'>
@@ -54,6 +54,7 @@ class Loginbox extends React.Component{
                     <form onSubmit={this.onSubmit}>
                         <input type="email" className="emailid" name="email" placeholder='Email' value={this.state.email} onChange={this.onChangeEmail} required />
                         <input type="password" className="password" name="password" placeholder='Password' value={this.state.password} onChange={this.onChangePassword} required />
+                        <a className="signup-link" href="/signup">Not a member?</a>
                         <input type="submit" className="login-btn" value="Login"></input>
                     </form>
                 </div>
@@ -61,5 +62,5 @@ class Loginbox extends React.Component{
         );
     }
 }
-    
+
 export default Loginbox;
