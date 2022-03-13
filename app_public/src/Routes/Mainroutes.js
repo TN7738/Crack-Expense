@@ -7,16 +7,14 @@ import Signup from "../components/Signup";
 function MainRoutes() {
     return (
         <Router>
-
-            <Route path="/">
+            <Route exact path="/">
                 <Login />
             </Route>
-            <Route path="/Signup">
+            <Route path="/signup">
                 <Signup />
             </Route>
-
         </Router>
-    )
+    );
 }
 
 export default MainRoutes
