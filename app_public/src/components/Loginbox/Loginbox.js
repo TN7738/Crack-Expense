@@ -1,6 +1,7 @@
 import React from 'react';
 import './loginbox.scss';
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
 class Loginbox extends React.Component {
     constructor(props) {
@@ -14,7 +15,9 @@ class Loginbox extends React.Component {
             email: '',
             password: ''
         }
+        
     }
+    
 
     onChangeEmail(e) {
         this.setState({
@@ -37,10 +40,17 @@ class Loginbox extends React.Component {
 
         axios.get('http://localhost:3000/api/user')
             .then(res => {
-                const foundEmail = res.data.some(el => el.email === userData.email);
-                const foundPassword = res.data.some(el => el.password === userData.password);
-                if (foundEmail && foundPassword) {
-                    console.log("Logged in");
+                let foundFlag = false;
+                res.data.forEach(elem => {
+                    if(elem.email == userData.email && elem.password == userData.password){
+                        foundFlag = true;
+                        return;
+                    }
+                });
+                if(foundFlag){
+                    const cookies = new Cookies();
+                    cookies.set('user', userData);
+                    console.log(cookies.get('user'));
                 }
             });
     }
