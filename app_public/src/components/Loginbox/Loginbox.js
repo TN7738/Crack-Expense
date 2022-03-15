@@ -2,11 +2,12 @@ import React, {useState} from 'react';
 import './loginbox.scss';
 import axios from 'axios';
 import Cookies from 'universal-cookie';
+import { useHistory } from 'react-router-dom';
 
 const Loginbox = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-
+    let history = useHistory();
     const onSubmit = (e) => {
         e.preventDefault();
 
@@ -14,7 +15,7 @@ const Loginbox = () => {
             email: email,
             password: password
         };
-
+        
         axios.get('http://localhost:3000/api/user')
             .then(res => {
                 let foundFlag = false;
@@ -28,7 +29,7 @@ const Loginbox = () => {
                 if(foundFlag){
                     const cookies = new Cookies();
                     cookies.set('user', userData);
-                    console.log(cookies.get('user'));
+                    history.push("/homepage");
                 }
             });
     };
