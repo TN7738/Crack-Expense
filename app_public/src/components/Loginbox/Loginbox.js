@@ -10,7 +10,7 @@ const Loginbox = () => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        const userData = {
+        let userData = {
             email: email,
             password: password
         };
@@ -21,6 +21,7 @@ const Loginbox = () => {
                 res.data.forEach(elem => {
                     if(elem.email == userData.email && elem.password == userData.password){
                         foundFlag = true;
+                        userData = {...userData, firstName: elem.firstName, lastName: elem.lastName};
                         return;
                     }
                 });
