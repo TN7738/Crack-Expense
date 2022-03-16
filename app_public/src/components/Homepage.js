@@ -8,7 +8,6 @@ const Home = () => {
         <div className="home-wrap">
             <Header />
             <Homepage />
-            <Footer />
         </div>
     );
 };
