@@ -6,7 +6,7 @@ const Homepage = () => {
         <div className="home-wrap">
             <div className='atf-wrap'>
                 <div className='grid'>
-                
+                    
                 </div>
             </div>
         </div>
