@@ -10,10 +10,10 @@ import Footer from '../components/Footer';
 function MainRoutes() {
     return (
         <Router>
-            <Route exact path="/login">
+            <Route path="/login">
                 <Login />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
                 <Homepage />
             </Route>
             <Route path="/signup">
@@ -22,7 +22,7 @@ function MainRoutes() {
             <Route path="/footer">
                 <Footer />
             </Route>
-                   
+
         </Router>
     );
 };
