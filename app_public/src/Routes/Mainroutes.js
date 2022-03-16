@@ -18,7 +18,11 @@ function MainRoutes() {
             </Route>
             <Route path="/signup">
                 <Signup />
-            </Route>       
+            </Route>
+            <Route path="/footer">
+                <Footer />
+            </Route>
+                   
         </Router>
     );
 };
