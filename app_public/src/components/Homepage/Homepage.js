@@ -2,7 +2,6 @@ import React from 'react';
 import './homepage.scss';
 import Typewriter from "../Typewriter/Typewriter";
 
-
 const Homepage = () => {
     return (
         <div className="home-wrap">
