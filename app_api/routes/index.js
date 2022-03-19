@@ -18,5 +18,10 @@ router
     .route('/group')
     .get(cltrgroup.groupListAll)
     .post(cltrgroup.groupCreate);
+router
+    .route('/group/:groupid')
+    .get(cltrgroup.groupReadOne)
+    .put(cltrgroup.groupUpdateOne)
+    .delete(cltrgroup.groupDeleteOne);
 
 module.exports = router;
