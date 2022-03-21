@@ -1,5 +1,6 @@
 import React from "react";
 import Typewriter from "typewriter-effect";
+import './typewriter.scss';
 
 function TypeWriter() {
     return (
@@ -10,7 +11,6 @@ function TypeWriter() {
                     "Create Groups",
                     "Add Members",
                     "Create TODO List",
-
                 ],
                 autoStart: true,
                 loop: true,
