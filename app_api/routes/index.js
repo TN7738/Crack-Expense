@@ -1,16 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const cntrlImages = require('../controllers/user');
+const cltruser = require('../controllers/user');
+const cltrgroup = require('../controllers/group');
 
 // image items
 router
     .route('/user')
-    .get(cntrlImages.userListAll)
-    .post(cntrlImages.userCreate);
+    .get(cltruser.userListAll)
+    .post(cltruser.userCreate);
 router
     .route('/user/:userid')
-    .get(cntrlImages.userReadOne)
-    .put(cntrlImages.userUpdateOne)
-    .delete(cntrlImages.userDeleteOne);
+    .get(cltruser.userReadOne)
+    .put(cltruser.userUpdateOne)
+    .delete(cltruser.userDeleteOne);
+
+router
+    .route('/group')
+    .get(cltrgroup.groupListAll)
+    .post(cltrgroup.groupCreate);
+router
+    .route('/group/:groupid')
+    .get(cltrgroup.groupReadOne)
+    .put(cltrgroup.groupUpdateOne)
+    .delete(cltrgroup.groupDeleteOne);
 
 module.exports = router;

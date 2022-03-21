@@ -43,3 +43,4 @@ process.once('SIGTERM', () => {
 }); 
 
 require('./user');
+require('./group');
