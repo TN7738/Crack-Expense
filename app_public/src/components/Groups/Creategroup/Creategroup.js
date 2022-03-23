@@ -34,7 +34,7 @@ const Creategroup = () => {
 
             axios.post(`http://localhost:3000/api/group`, grpData)
                 .then(res => {
-                    console.log("group created");
+                    history.push("/group");
                 });
         }
     };
@@ -42,6 +42,13 @@ const Creategroup = () => {
     const removeUserFromGroup = (el) => {
         const _id = el._id;
         setAddedUsers(addedUsers.filter(item => item._id !== _id));
+        setUsers((users) => [...users, el]);
+    };
+
+    const addUserToGroup = (el) => {
+        setAddedUsers((addedUsers) => [...addedUsers, el]);
+        const _id = el._id;
+        setUsers(users.filter(item => item._id !== _id));
     };
     return (
         <div className='create-grp-wrap'>
@@ -65,7 +72,7 @@ const Creategroup = () => {
                                         users.map(elem => {
                                             return(
                                                 <li key={elem._id}>
-                                                    <span>{elem.firstName} {elem.lastName}</span> <a onClick={() => { setAddedUsers((addedUsers) => [...addedUsers, elem]) }}>+</a>
+                                                    <span>{elem.firstName} {elem.lastName}</span> <a onClick={() => { addUserToGroup(elem) }}>+</a>
                                                 </li>
                                             )
                                         })
