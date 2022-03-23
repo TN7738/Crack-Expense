@@ -1,0 +1,71 @@
+.group-wrap{
+    .grid{
+        height: 100%;
+        .inner-wrap{
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .left-wrap{
+                width: 100%;
+                max-width: 300px;
+                h4{
+                    text-align: center;
+                    font-size: 24px;
+                    font-weight: 700;
+                    color: #2E4064;
+                    padding-bottom: 15px;
+                }
+                ul{
+                    padding: 20px 40px;
+                    border: solid 1px #2E4064;
+                    border-radius: 30px;
+                    width: 100%;
+                    max-width: 300px;
+                    text-align: center;
+                    li.grp{
+                        margin-top: 15px;
+                        &:first-child{
+                            margin-top: 0;
+                        }
+                        a{
+                            padding: 10px;
+                            background: rgb(175, 169, 169, 0.6);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 10px;
+                            cursor: pointer;
+                            font-size: 15px;
+                            font-weight: 600;
+                            transition: all 450ms;
+                            &:hover{
+                                transform: scale(1.1);
+                            }
+                        }
+                    }
+                }
+            }
+            .right-wrap{
+                .new-grp-btn{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 130px;
+                    text-align: center;
+                    height: 70px;
+                    background: #2E4064;
+                    border-radius: 5px;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    transition: all 450ms;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+.slider-wrap{
+    position: relative;
+    height: calc(100vh - 270px);
+    .swiper {
+        height: 100%;
+    }
+    .parent-wrap{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .left-wrap{
+            h2{
+                font-size: 50px;
+                font-weight: 700;
+                color: #2E4064;
+                padding-left: 20px;
+            }
+        }
+    }
+}

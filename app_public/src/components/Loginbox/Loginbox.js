@@ -20,7 +20,7 @@ const Loginbox = () => {
             .then(res => {
                 let foundFlag = false;
                 res.data.forEach(elem => {
-                    if (elem.email == userData.email && elem.password == userData.password) {
+                    if (elem.email === userData.email && elem.password === userData.password) {
                         foundFlag = true;
                         userData = { ...userData, firstName: elem.firstName, lastName: elem.lastName };
                         return;

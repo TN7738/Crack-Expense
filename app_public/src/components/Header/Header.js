@@ -20,7 +20,7 @@ const header = () => {
         <header>
             <div className='grid'>
                 <nav>
-                    <img src='images/logo.png' alt='Logo' />
+                    <img src='/images/logo.png' alt='Logo' />
                     <UlContent />
                 </nav>
             </div>

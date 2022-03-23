@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Login from "../components/Login";
 import Signup from "../components/Signup";
 import Homepage from "../components/Homepage";
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import Groups from '../components/Groups/Groups';
+import Creategroup from '../components/Groups/Creategroup/Creategroup';
 
 function MainRoutes() {
     return (
@@ -19,10 +19,12 @@ function MainRoutes() {
             <Route path="/signup">
                 <Signup />
             </Route>
-            <Route path="/footer">
-                <Footer />
+            <Route exact path="/group">
+                <Groups />
             </Route>
-
+            <Route exact path="/group/create-group">
+                <Creategroup />
+            </Route>
         </Router>
     );
 };
