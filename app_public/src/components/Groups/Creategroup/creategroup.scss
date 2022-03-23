@@ -59,6 +59,7 @@
                             border-radius: 20px;
                             font-size: 13px;
                             font-weight: 600;
+                            width: calc(100% - 25px);
                         }
                         a{
                             display: flex;
@@ -72,6 +73,12 @@
                             font-weight: 600;
                             margin-left: 5px;
                             cursor: pointer;
+                            transition: all 450ms;
+                            &:hover{
+                                box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.68);
+                                -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.68);
+                                -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.68);
+                            }
                         }
                     }
                 }
@@ -94,6 +101,7 @@
                         border-radius: 20px;
                         font-size: 13px;
                         font-weight: 600;
+                        width: calc(100% - 25px);
                     }
                     a{
                         display: flex;
@@ -107,6 +115,12 @@
                         font-weight: 600;
                         margin-left: 5px;
                         cursor: pointer;
+                        transition: all 450ms;
+                        &:hover{
+                            box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.68);
+                            -webkit-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.68);
+                            -moz-box-shadow: 0px 0px 5px 3px rgba(0,0,0,0.68);
+                        }
                     }
                 }
             }
