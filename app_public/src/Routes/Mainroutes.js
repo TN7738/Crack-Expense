@@ -6,6 +6,7 @@ import Signup from "../components/Signup";
 import Homepage from "../components/Homepage";
 import Groups from '../components/Groups/Groups';
 import Creategroup from '../components/Groups/Creategroup/Creategroup';
+import Groupdetails from '../components/Groups/Groupdetails/Groupdetails';
 
 function MainRoutes() {
     return (
@@ -24,6 +25,9 @@ function MainRoutes() {
             </Route>
             <Route exact path="/group/create-group">
                 <Creategroup />
+            </Route>
+            <Route exact path="/group/:id">
+                <Groupdetails />
             </Route>
         </Router>
     );
