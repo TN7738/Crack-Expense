@@ -22,7 +22,7 @@ const Loginbox = () => {
                 res.data.forEach(elem => {
                     if (elem.email === userData.email && elem.password === userData.password) {
                         foundFlag = true;
-                        userData = { ...userData, firstName: elem.firstName, lastName: elem.lastName };
+                        userData = { ...userData, firstName: elem.firstName, lastName: elem.lastName, _id: elem._id };
                         return;
                     }
                 });
