@@ -18,7 +18,6 @@ const Groupdetails = () => {
                     res.data.groupMembers.forEach(elem => {
                         axios.get("http://localhost:3000/api/user/"+elem)
                             .then(res => {
-                                //setGrpMbrNames(res.data.firstName + " " + res.data.lastName);
                                 setGrpMbrNames((grpMbrNames) => [...grpMbrNames, res.data.firstName + " " + res.data.lastName]);
                             })
                     })
@@ -26,19 +25,25 @@ const Groupdetails = () => {
             })
     }, []);
 
-    // console.log(grpMbrNames)
-
     return (
         <div className='grp-dtls-wrap'>
             <Header />
             <div className='atf-wrap'>
                 <div className='grid'>
-                    <h4>{grpDetails}</h4>
-                    <ul>
-                        {
-                            grpMbrNames.map((membr, index) => <li key={`member${index}`}>{membr}</li>)
-                        }
-                    </ul>
+                    <div className='inner-wrap'>
+                        <div className='left-wrap'>
+                            <h4>{grpDetails}</h4>
+                            <ul>
+                                {
+                                    grpMbrNames.map((membr, index) => <li key={`member${index}`}>{membr}</li>)
+                                }
+                            </ul>
+                        </div>
+                        <div className='right-wrap'>
+                            <a className='add-exp'>Add Expense</a>
+                            <a className='add-exp'>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
