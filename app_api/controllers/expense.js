@@ -29,6 +29,7 @@ const expenseCreate = (req, res) => {
             name: req.body.name,
             date: req.body.date,
             gmembers: req.body.gmembers,
+            amount: req.body.amount,
             img: req.body.img
         }, (err, expensedata) => {
             if (err) {
@@ -78,6 +79,7 @@ const expenseUpdateOne = (req, res) => {
             expensedata.name = req.body.name;
             expensedata.date = req.body.date;
             expensedata.gmembers = req.body.gmembers;
+            expensedata.amount = req.body.amount;
             expensedata.img = req.body.img;
             expensedata.save((err, expensedata) => {
                 if (err) {
