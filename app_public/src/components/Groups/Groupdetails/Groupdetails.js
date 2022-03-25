@@ -8,36 +8,37 @@ import { useParams } from 'react-router-dom';
 const Groupdetails = () => {
     let { id } = useParams();
     const [grpDetails, setGrpDetails] = useState([]);
+    const [grpMbrNames, setGrpMbrNames] = useState([]);
     
     React.useEffect(() => {
         axios.get("http://localhost:3000/api/group/"+id)
             .then(res => {
-                setGrpDetails(res.data);
-                let grpMemNames = [];
-                grpDetails.groupMembers.forEach(elem => {
-                    axios.get("http://localhost:3000/api/user/"+id)
-                        .then(res => {
-                            grpMemNames.push(res.firstName + " " + res.lastName);
-                            console.log(res.firstName + " " + res.lastName);
-                        });
-                });
-                setGrpDetails((grpDetails) => [...grpDetails, grpMemNames]);
+                setGrpDetails(res.data.groupName);
+                return(
+                    res.data.groupMembers.forEach(elem => {
+                        axios.get("http://localhost:3000/api/user/"+elem)
+                            .then(res => {
+                                //setGrpMbrNames(res.data.firstName + " " + res.data.lastName);
+                                setGrpMbrNames((grpMbrNames) => [...grpMbrNames, res.data.firstName + " " + res.data.lastName]);
+                            })
+                    })
+                );
             })
-            .catch(err => {
-                setGrpDetails(null);
-            });
     }, []);
 
-    console.log(grpDetails);
+    // console.log(grpMbrNames)
 
     return (
         <div className='grp-dtls-wrap'>
             <Header />
             <div className='atf-wrap'>
                 <div className='grid'>
-                    {
-                        
-                    }
+                    <h4>{grpDetails}</h4>
+                    <ul>
+                        {
+                            grpMbrNames.map((membr, index) => <li key={`member${index}`}>{membr}</li>)
+                        }
+                    </ul>
                 </div>
             </div>
         </div>
