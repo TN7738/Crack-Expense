@@ -4,8 +4,11 @@ import { useHistory } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from "../Footer/Footer";
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
 const Groups = () => {
+    const cookies = new Cookies();
+    const _id = cookies.get('user')['_id'];
     let history = useHistory();
     if(document.cookie.indexOf('user') === -1){
         history.push("/login");
@@ -14,7 +17,16 @@ const Groups = () => {
     React.useEffect(() => {
         axios.get("http://localhost:3000/api/group")
             .then(res => {
-                setGroups(res.data);
+                let temp = [];
+                res.data.forEach(curr => {
+                    curr.groupMembers.forEach(elem => {
+                        if(_id === elem){
+                            temp.push(curr);
+                            return;
+                        }
+                    });
+                });
+                setGroups(temp);
             })
             .catch(err => {
                 setGroups(null);

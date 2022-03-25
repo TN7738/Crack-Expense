@@ -3,9 +3,13 @@ import './groupdetails.scss';
 import Header from '../../Header/Header';
 import Footer from "../../Footer/Footer";
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 
 const Groupdetails = () => {
+    let history = useHistory();
+    if(document.cookie.indexOf('user') === -1){
+        history.push("/login");
+    }
     let { id } = useParams();
     const [grpDetails, setGrpDetails] = useState([]);
     const [grpMbrNames, setGrpMbrNames] = useState([]);
