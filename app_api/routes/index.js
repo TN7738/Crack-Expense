@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const cltruser = require('../controllers/user');
 const cltrgroup = require('../controllers/group');
+const cltrexpense = require('../controllers/expense');
 
 // image items
 router
@@ -23,5 +24,15 @@ router
     .get(cltrgroup.groupReadOne)
     .put(cltrgroup.groupUpdateOne)
     .delete(cltrgroup.groupDeleteOne);
+
+router
+    .route('/expense')
+    .get(cltrexpense.expenseListAll)
+    .post(cltrexpense.expenseCreate);
+router
+    .route('/expense/:expenseid')
+    .get(cltrexpense.expenseReadOne)
+    .put(cltrexpense.expenseUpdateOne)
+    .delete(cltrexpense.expenseDeleteOne);
 
 module.exports = router;
