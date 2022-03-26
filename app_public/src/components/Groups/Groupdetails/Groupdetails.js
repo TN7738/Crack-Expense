@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './groupdetails.scss';
 import Header from '../../Header/Header';
 import Footer from "../../Footer/Footer";
+import Expenses from '../../Expenses/Expenses';
 import axios from 'axios';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -43,6 +44,9 @@ const Groupdetails = () => {
                                 }
                             </ul>
                         </div>
+                        <div className='middle-wrap'>
+                            <Expenses groupid = {id} />
+                        </div>
                         <div className='right-wrap'>
                             <a className='add-exp'>Add Expense</a>
                             <a className='add-exp'>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
@@ -50,7 +54,9 @@ const Groupdetails = () => {
                     </div>
                 </div>
             </div>
+           
         </div>
+
     );
 };
     
