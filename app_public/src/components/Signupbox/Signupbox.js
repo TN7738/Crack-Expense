@@ -53,7 +53,18 @@ const Signupbox = (props) => {
                                 history.push("/login");
                                 notify('Register Successfully');
                             }
-                        )
+                        );
+                }
+            })
+            .catch(err => {
+                if(err.response.status === 404){
+                    axios.post('http://localhost:3000/api/user', userData)
+                        .then(
+                            res => {
+                                history.push("/login");
+                                notify('Register Successfully');
+                            }
+                        );
                 }
             });
     };
