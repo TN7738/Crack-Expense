@@ -46,8 +46,8 @@ const Groups = () => {
                         <div className='left-wrap'>
                             <h4>Your Groups</h4>
                             <ul>
-                                {   
-                                    groups == null ? <li className='nogrps'>You don't have any groups yet</li> : groups.map(elem => <li className='grp' key={elem._id}><a href={'/group/' + elem._id}>{elem.groupName}</a></li>)
+                                {
+                                    groups == null || groups.length === 0 ? <li className='nogrps'>You don't have any groups yet</li> : groups.map(elem => <li className='grp' key={elem._id}><a href={'/group/' + elem._id}>{elem.groupName}</a></li>)
                                 }
                             </ul>
                         </div>
