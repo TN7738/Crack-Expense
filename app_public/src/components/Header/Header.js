@@ -11,20 +11,27 @@ const header = () => {
     };
 
     let firstName;
-    if(document.cookie.indexOf('user') != -1){
+    if (document.cookie.indexOf('user') != -1) {
         firstName = cookies.get('user')['firstName'];
     }
 
     const logout = () => {
         cookies.remove('user');
-        notify("Logged out successfully");        
+        notify("Logged out successfully");
     }
 
     const UlContent = props => {
-        if(firstName == undefined){
-            return <ul><li><a href="Login">Login</a></li><li><a href="Signup">Signup</a></li></ul>
+        if (firstName == undefined) {
+            return <ul>
+                <li>
+                    <button className='btn'><a href="Login">Login</a></button>
+                </li>
+                <li>
+                    <button className='btn'><a href="Signup">Signup</a></button>
+                </li>
+            </ul>
         }
-        else{
+        else {
             return <ul><li>Hi, {firstName}</li><li><a href="/" onClick={logout}>Logout</a></li></ul>
         }
     }
@@ -41,5 +48,5 @@ const header = () => {
         </header>
     );
 };
-    
+
 export default header;

@@ -4,6 +4,7 @@ header{
        display: flex;
        justify-content: space-between;
        align-items: center;
+       background: #2e4064;
         img{
             width: 56px;
         }
@@ -13,10 +14,21 @@ header{
             align-items: center;
             li{
                 margin-right: 25px;
-                a{
-                    text-decoration: none;
-                    color: #1d3557;
-                }
+                .btn{
+                    background-color: #2E4064;
+                    /* position: relative; */
+                    /* left: 80px; */
+                    /* margin-top: 18px; */
+                    font-size: 17px;
+                    padding: 11px 33px;
+                    border-radius: 5px;
+                    cursor: pointer;
+                        a{
+                            color:#fff;
+                            text-decoration: none;
+                        }
+                    }
+                
                 &:last-child{
                     margin-right: 0;
                 }

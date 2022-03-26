@@ -45,7 +45,11 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   position: relative;
   height: 100vh;
   min-height: 450px;
-  background: #fff url('../public/images/atf-bg.jpg') center / cover no-repeat;
+  /* background: url('../public/images/atf-bg3.jpg') center / cover no-repeat; */
+  /* background: radial-gradient(#09324A, #010103); */
+  /* background: radial-gradient(#4343a4,#e3e3ec,#02021d); */
+  background: radial-gradient(#3674ce,#e3e3ec,#061433);
+
 }
 .atf-wrap:after{
   content: '';
