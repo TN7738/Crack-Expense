@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './groupdetails.scss';
 import Header from '../../Header/Header';
 import Footer from "../../Footer/Footer";
-import Expenses from '../../Expenses/Expenses';
+import Listingexpense from '../../Expense/Listingexpense/Listingexpense';
 import axios from 'axios';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -45,11 +45,11 @@ const Groupdetails = () => {
                             </ul>
                         </div>
                         <div className='middle-wrap'>
-                            <Expenses groupid = {id} />
+                            <Listingexpense groupid = {id} />
                         </div>
                         <div className='right-wrap'>
-                            <a className='add-exp'>Add Expense</a>
-                            <a className='add-exp'>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
+                            <a className='add-exp' href={'/group/' + id + '/addexpense'}>Add Expense</a>
+                            <a className='add-todo'>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
                         </div>
                     </div>
                 </div>
