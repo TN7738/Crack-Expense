@@ -34,7 +34,7 @@ const Groups = () => {
     }, []);
     const toCreateGroup = () => {
         if(document.cookie.indexOf('user') !== -1){
-            history.push("/group/create-group");
+            history.push("/create-group");
         }
     };
     return (

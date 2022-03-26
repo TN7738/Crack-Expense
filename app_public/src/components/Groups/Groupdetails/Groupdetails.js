@@ -44,8 +44,8 @@ const Groupdetails = () => {
                             </ul>
                         </div>
                         <div className='right-wrap'>
-                            <a className='add-exp'>Add Expense</a>
-                            <a className='add-exp'>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
+                            <a className='add-exp' href={'/group/' + id + '/addexpense'}>Add Expense</a>
+                            <a className='add-todo'>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
                         </div>
                     </div>
                 </div>
