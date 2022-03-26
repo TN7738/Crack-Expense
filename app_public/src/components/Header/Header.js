@@ -32,7 +32,9 @@ const header = () => {
         <header>
             <div className='grid'>
                 <nav>
-                    <img src='/images/logo.png' alt='Logo' />
+                    <a href='/' >
+                        <img src='/images/logo.png' alt='Logo' />
+                    </a>
                     <UlContent />
                 </nav>
             </div>
