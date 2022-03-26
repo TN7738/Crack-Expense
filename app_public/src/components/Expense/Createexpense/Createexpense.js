@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './expense.scss';
+import './createexpense.scss';
 import { useParams, useHistory } from 'react-router-dom';
-import Header from '../Header/Header';
-import Footer from "../Footer/Footer";
+import Header from '../../Header/Header';
+import Footer from "../../Footer/Footer";
 import axios from 'axios';
 
 const Expense = () => {

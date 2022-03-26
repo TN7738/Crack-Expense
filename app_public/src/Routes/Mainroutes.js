@@ -7,7 +7,7 @@ import Homepage from "../components/Homepage";
 import Groups from '../components/Groups/Groups';
 import Creategroup from '../components/Groups/Creategroup/Creategroup';
 import Groupdetails from '../components/Groups/Groupdetails/Groupdetails';
-import Expense from '../components/Expense/Expense';
+import Expense from '../components/Expense/Createexpense/Createexpense';
 
 function MainRoutes() {
     return (
