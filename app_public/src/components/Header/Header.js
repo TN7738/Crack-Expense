@@ -24,10 +24,10 @@ const header = () => {
         if (firstName == undefined) {
             return <ul>
                 <li>
-                    <button className='btn'><a href="Login">Login</a></button>
+                    <a href="/login" className='btn'>Login</a>
                 </li>
                 <li>
-                    <button className='btn'><a href="Signup">Signup</a></button>
+                    <a href="/signup" className='btn'>Signup</a>
                 </li>
             </ul>
         }
@@ -39,7 +39,7 @@ const header = () => {
         <header>
             <div className='grid'>
                 <nav>
-                    <a href='/' >
+                    <a href='/' className='home-btn'>
                         <img src='/images/logo.png' alt='Logo' />
                     </a>
                     <UlContent />

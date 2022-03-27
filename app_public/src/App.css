@@ -43,7 +43,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 
 .atf-wrap{
   position: relative;
-  height: 100vh;
+  height: calc(100vh - 80px);
   min-height: 450px;
   /* background: url('../public/images/atf-bg3.jpg') center / cover no-repeat; */
   /* background: radial-gradient(#09324A, #010103); */

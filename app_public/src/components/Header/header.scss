@@ -1,12 +1,21 @@
 header{
+    background: #2e4064;
     nav{
-       padding: 12px 0;
-       display: flex;
-       justify-content: space-between;
-       align-items: center;
-       background: #2e4064;
-        img{
+        padding: 12px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        .home-btn{
+            display: flex;
+            justify-content: center;
+            align-items: center;
             width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            background-color: #f2f2f2;
+            img{
+                width: 43px;
+            }
         }
         ul {
             display: flex;
@@ -20,10 +29,8 @@ header{
                     padding: 11px 33px;
                     border-radius: 5px;
                     cursor: pointer;
-                        a{
-                            color:#fff;
-                            text-decoration: none;
-                        }
+                    color:#fff;
+                    text-decoration: none;
                     }
                 
                 &:last-child{
