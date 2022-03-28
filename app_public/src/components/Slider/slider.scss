@@ -14,9 +14,25 @@
                 font-size: 50px;
                 font-weight: 700;
                 color: #2E4064;
-                padding-left: 80px;
             }
-        }
+            p{
+                font-size: 25px;
+                font-weight: 700;
+                color: #2E4064;
+                padding: 20px 0 40px;
+            }
+            .btn{
+                background-color: #2E4064;
+                position: relative;
+                font-size: 20px;
+                padding: 10px 60px;
+                border-radius: 5px;
+                cursor: pointer;
+                color:#fff;
+                text-decoration: none;
+                font-weight: 700;
+                }
+            }
         .right-wrap > img {
             width: 70%;
             margin: 0 15%;
