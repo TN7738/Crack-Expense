@@ -45,3 +45,4 @@ process.once('SIGTERM', () => {
 require('./user');
 require('./group');
 require('./expense');
+require('./todo');

@@ -3,6 +3,7 @@ const router = express.Router();
 const cltruser = require('../controllers/user');
 const cltrgroup = require('../controllers/group');
 const cltrexpense = require('../controllers/expense');
+const cltrtodo = require('../controllers/todo');
 
 // image items
 router
@@ -34,5 +35,15 @@ router
     .get(cltrexpense.expenseReadOne)
     .put(cltrexpense.expenseUpdateOne)
     .delete(cltrexpense.expenseDeleteOne);
+
+router
+    .route('/todo')
+    .get(cltrtodo.todoListAll)
+    .post(cltrtodo.todoCreate);
+router
+    .route('/todo/:todoid')
+    .get(cltrtodo.todoReadOne)
+    .put(cltrtodo.todoUpdateOne)
+    .delete(cltrtodo.todoDeleteOne);
 
 module.exports = router;
