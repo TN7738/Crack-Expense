@@ -1,0 +1,174 @@
+.dtl-exp-wrap{
+    .atf-wrap{
+        h4 {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #2E4064;
+            padding: 40px 0;
+        }
+        .inner-wrap {
+            padding: 20px 40px;
+            border: solid 1px #2E4064;
+            border-radius: 30px;
+            width: 100%;
+            max-width: 300px;
+            text-align: center;
+            margin: 0 auto;
+            position: relative;
+            .dlt{
+                width: 20px;
+                height: 20px;
+                cursor: pointer;
+                transition: all 450ms;
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                &:hover{
+                    transform: scale(1.1);
+                }
+                img{
+                    height: 20px;
+                }
+            }
+            input[type=text], input[type=number]{
+                height: 40px;
+                outline: none;
+                border-radius: 20px;
+                padding: 0 20px;
+                width: 100%;
+                text-align: center;
+                border: solid 1px #e3d7d7;
+                text-transform: capitalize;
+            }
+            input[type=number] {
+                margin-top: 5px;
+                &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
+                    -webkit-appearance: none;
+                    margin: 0;
+                }
+            }
+            .paid-by {
+                padding: 10px 0;
+                .ttl {
+                    font-size: 14px;
+                }
+                .prsn {
+                    padding: 5px 9px;
+                    background: #afacac;
+                    border-radius: 20px;
+                    font-size: 13px;
+                    font-weight: 600;
+                }
+            }
+            .added-members {
+                margin: 20px 0;
+                background-color: #fff;
+                border-radius: 20px;
+                min-height: 100px;
+                position: relative;
+                padding: 20px;
+                ul {
+                    height: 100%;
+                    position: relative;
+                    text-align: left;
+                    min-height: 60px;
+                    li{
+                        &.no-mbrs {
+                            position: absolute;
+                            left: 50%;
+                            top: 50%;
+                            width: 100%;
+                            font-size: 12px;
+                            transform: translate(-50%, -50%);
+                            text-align: center;
+                        }
+                        &.member {
+                            display: flex;
+                            align-items: center;
+                            margin-top: 7px;
+                            &:first-child {
+                                margin-top: 0;
+                            }
+                            span {
+                                padding: 5px 9px;
+                                background: #c2c2c2;
+                                border-radius: 20px;
+                                font-size: 13px;
+                                font-weight: 600;
+                                width: calc(100% - 25px);
+                            }
+                            a {
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                width: 25px;
+                                height: 25px;
+                                border-radius: 50%;
+                                font-size: 12px;
+                                background: #c2c2c2;
+                                font-weight: 600;
+                                margin-left: 5px;
+                                cursor: pointer;
+                                transition: all 450ms;
+                            }
+                        }
+                    }
+                }
+            }
+            .members-wrap {
+                text-align-last: left;
+                ul{
+                    li {
+                        display: flex;
+                        align-items: center;
+                        text-align-last: left;
+                        margin-top: 7px;
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                        span {
+                            padding: 5px 9px;
+                            background: #c2c2c2;
+                            border-radius: 20px;
+                            font-size: 13px;
+                            font-weight: 600;
+                            width: calc(100% - 25px);
+                        }
+                        a {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            width: 25px;
+                            height: 25px;
+                            border-radius: 50%;
+                            font-size: 12px;
+                            background: #c2c2c2;
+                            font-weight: 600;
+                            margin-left: 5px;
+                            cursor: pointer;
+                            transition: all 450ms;
+                        }
+                    }
+                }
+            }
+            .create-btn {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                text-align: center;
+                height: 40px;
+                background: #2E4064;
+                border-radius: 20px;
+                color: #fff;
+                font-size: 18px;
+                font-weight: 700;
+                cursor: pointer;
+                transition: all 450ms;
+                border: none;
+                margin-top: 20px;
+            }
+        }
+    }
+}

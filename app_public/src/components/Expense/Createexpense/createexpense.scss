@@ -27,8 +27,21 @@
         input[type=number]{
             margin-top: 5px;
             &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+        .paid-by{
+            padding: 10px 0;
+            .ttl{
+                font-size: 14px;
+            }
+            .prsn{
+                padding: 5px 9px;
+                background: #afacac;
+                border-radius: 20px;
+                font-size: 13px;
+                font-weight: 600;
             }
         }
         .added-members {

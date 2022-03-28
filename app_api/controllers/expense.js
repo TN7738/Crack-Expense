@@ -28,6 +28,7 @@ const expenseCreate = (req, res) => {
             gid: req.body.gid,
             name: req.body.name,
             date: req.body.date,
+            paidby: req.body.paidby,
             gmembers: req.body.gmembers,
             amount: req.body.amount,
             img: req.body.img
@@ -78,6 +79,7 @@ const expenseUpdateOne = (req, res) => {
             expensedata.gid = req.body.gid;
             expensedata.name = req.body.name;
             expensedata.date = req.body.date;
+            expensedata.paidby = req.body.paidby;
             expensedata.gmembers = req.body.gmembers;
             expensedata.amount = req.body.amount;
             expensedata.img = req.body.img;
