@@ -11,7 +11,7 @@ const header = () => {
     };
 
     let firstName;
-    if (document.cookie.indexOf('user') != -1) {
+    if (document.cookie.indexOf('user') !== -1) {
         firstName = cookies.get('user')['firstName'];
     }
 
@@ -21,7 +21,7 @@ const header = () => {
     }
 
     const UlContent = props => {
-        if (firstName == undefined) {
+        if (firstName === undefined) {
             return <ul>
                 <li>
                     <a href="/login" className='btn'>Login</a>

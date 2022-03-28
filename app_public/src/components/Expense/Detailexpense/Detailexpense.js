@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import './createexpense.scss';
+import './detailexpense.scss';
 import { useParams, useHistory } from 'react-router-dom';
 import Header from '../../Header/Header';
 import Footer from "../../Footer/Footer";
 import axios from 'axios';
 import Cookies from 'universal-cookie';
 
-const Expense = () => {
+const Detailexpense = () => {
     let history = useHistory();
     const cookies = new Cookies();
     let uid;
@@ -17,42 +17,57 @@ const Expense = () => {
         uid = cookies.get('user')['_id'];
     }
     let { id } = useParams();
+    const [expnsData, setExpnsData] = useState([]);
     const [name, setName] = useState("");
+    const [paidby, setPaidby] = useState([]);
+    const [paidbyName, setPaidbyName] = useState("");
     const [amount, setAmount] = useState("");
-    const [currUser, setCurrUser] = useState("");
     const [addedUsers, setAddedUsers] = useState([]);
     const [users, setUsers] = useState([]);
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/group/"+id)
+        axios.get("http://localhost:3000/api/expense/"+id)
             .then(res => {
+                setExpnsData(res.data);
+                setName(res.data.name);
+                setAmount(res.data.amount);
+                setPaidby(res.data.paidby);
                 return(
-                    res.data.groupMembers.forEach(elem => {
+                    res.data.gmembers.forEach(elem => {
                         axios.get("http://localhost:3000/api/user/"+elem)
                             .then(res => {
-                                uid === elem ? setCurrUser(res.data.firstName + " " + res.data.lastName) : setUsers((users) => [...users, res.data]);
+                                setAddedUsers((addedUsers) => [...addedUsers, res.data]);
                             })
                     })
                 );
-            })
+            });
     }, []);
+
+    React.useEffect(() => {
+        axios.get("http://localhost:3000/api/user/"+uid)
+            .then(res => {
+                setPaidbyName(res.data.firstName + " " + res.data.lastName);
+            });
+    });
 
     const onSubmit = (e) => {
         e.preventDefault();
 
         if(addedUsers.length >= 1){
+            let tmpUsrs = [];
+            addedUsers.forEach(user => {
+                tmpUsrs.push(user._id);
+            });
             const expData = {
-                gid: id,
+                gid: expnsData.gid,
                 name: name,
                 date: new Date(),
-                paidby: uid,
-                gmembers: addedUsers,
+                paidby: paidby,
+                gmembers: tmpUsrs,
                 amount: amount
             };
-
-            axios.post(`http://localhost:3000/api/expense`, expData)
-                .then(res => {
-                    history.push("/group");
-                });
+            const res = axios.put("http://localhost:3000/api/expense"+id, expData);
+            console.log(res);
+            // history.push("/group/"+expnsData.gid);
         }
     };
 
@@ -67,18 +82,26 @@ const Expense = () => {
         const _id = el._id;
         setUsers(users.filter(item => item._id !== _id));
     };
+
+    const deleteExp = () => {
+        axios.delete("http://localhost:3000/api/expense/"+id)
+        .then(res => {
+            history.push("/group/"+expnsData.gid);
+        })
+    }
     return (
-        <div className='create-exp-wrap'>
+        <div className='dtl-exp-wrap'>
             <Header />
             <div className='atf-wrap'>
                 <div className='grid'>
-                    <h4>Add an expense</h4>
+                    <h4>{name}</h4>
                     <div className='inner-wrap'>
+                        <a className='dlt' onClick={e => { deleteExp() }}><img src='/images/delete.png' alt='Delete-button' /></a>
                         <form onSubmit={e => { onSubmit(e) }}>
                             <input type="text" className="name" name="name" placeholder='Expense Name' value={name} onChange={e => setName(e.target.value)} required />
                             <input type="number" className="amount" name="amount" placeholder='Total' value={amount} onChange={e => setAmount(e.target.value)} required />
                             <div className='paid-by'>
-                                <span className='ttl'>Paid by:</span> <span className='prsn'>{currUser}</span>
+                                <span className='ttl'>Paid by:</span> <span className='prsn'>{paidbyName}</span>
                             </div>
                             <div className='added-members'>
                                 <ul>
@@ -100,7 +123,7 @@ const Expense = () => {
                                     }
                                 </ul>
                             </div>
-                            <input type="submit" className="create-btn" value="Create"></input>
+                            <input type="submit" className="create-btn" value="Update"></input>
                         </form>
                     </div>
                 </div>
@@ -110,4 +133,4 @@ const Expense = () => {
     );
 }
 
-export default Expense;
+export default Detailexpense;

@@ -8,6 +8,7 @@ import Groups from '../components/Groups/Groups';
 import Creategroup from '../components/Groups/Creategroup/Creategroup';
 import Groupdetails from '../components/Groups/Groupdetails/Groupdetails';
 import Expense from '../components/Expense/Createexpense/Createexpense';
+import Detailexpense from '../components/Expense/Detailexpense/Detailexpense';
 
 function MainRoutes() {
     return (
@@ -32,6 +33,9 @@ function MainRoutes() {
             </Route>
             <Route exact path="/group/:id/addexpense">
                 <Expense />
+            </Route>
+            <Route exact path="/expense/:id">
+                <Detailexpense />
             </Route>
         </Router>
     );

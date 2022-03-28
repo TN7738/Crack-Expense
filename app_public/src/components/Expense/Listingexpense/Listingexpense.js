@@ -29,7 +29,7 @@ const Listingexpense = (props) => {
             <h4>Expenses</h4>
             <ul>
                 {
-                    expenses.map((expense) => <li key={expense._id}><a href={'/expense/' + expense._id}>{expense.name}{String(new Date(expense.date).getMonth() + 1).padStart(2, '0') + '/' + String(new Date(expense.date).getDate()).padStart(2, '0') + '/' + new Date(expense.date).getFullYear()}</a></li>)
+                    expenses === null ? <li>You don't have any expenses yet</li> : expenses.map(expense => <li key={expense._id}><a href={'/expense/' + expense._id}>{expense.name}{String(new Date(expense.date).getMonth() + 1).padStart(2, '0') + '/' + String(new Date(expense.date).getDate()).padStart(2, '0') + '/' + new Date(expense.date).getFullYear()}</a></li>)
                 }
             </ul>
         </div>

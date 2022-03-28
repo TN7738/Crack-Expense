@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import './signupbox.scss';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
@@ -25,10 +25,6 @@ const Signupbox = (props) => {
             return { ...previousState, [name]: value };
         });
     }
-
-    // const clearstate = () => {
-    //     setnewuser({...initalState});
-    // };
 
     const createuser = (e) => {
         e.preventDefault();

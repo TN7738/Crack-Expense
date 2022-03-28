@@ -13,6 +13,10 @@ const expenseSchema = new mongoose.Schema({
         type: Date,
         required: true
     },
+    paidby: {
+        type: String,
+        required: true
+    },
     gmembers: {
         type: [String],
         required: true
