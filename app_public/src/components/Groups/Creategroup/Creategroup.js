@@ -4,11 +4,18 @@ import { useHistory } from 'react-router-dom';
 import Header from '../../Header/Header';
 import Footer from "../../Footer/Footer";
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
 const Creategroup = () => {
     let history = useHistory();
+    let uid;
+    const cookies = new Cookies();
+    // const [userid, setUserid] = useState("");
     if(document.cookie.indexOf('user') === -1){
         history.push("/login");
+    }
+    else{
+        uid = cookies.get('user')['_id'];
     }
     const [groupName, setGroupName] = useState("");
     const [users, setUsers] = useState([]);
@@ -16,7 +23,9 @@ const Creategroup = () => {
     React.useEffect(() => {
         axios.get("http://localhost:3000/api/user")
             .then(res => {
-                setUsers(res.data);
+                res.data.forEach(elem => {
+                    uid === elem._id ? setAddedUsers((addedUsers) => [...addedUsers, elem]) : setUsers((users) => [...users, elem]);
+                });
             })
             .catch(err => {
                 setUsers(null);
@@ -62,7 +71,7 @@ const Creategroup = () => {
                             <div className='added-members'>
                                 <ul>
                                     {
-                                        addedUsers.length < 1 ? <li className='no-mbrs'>No members yet</li> : addedUsers.map(elem => <li className='member' key={elem._id}><span>{elem.firstName}, {elem.lastName}</span> <a onClick={e => { removeUserFromGroup(elem) }}>X</a></li>)
+                                        addedUsers.length < 1 ? <li className='no-mbrs'>No members yet</li> : addedUsers.map(elem => <li className={'member ' + (uid === elem._id ? 'hide-btn' : 'show-btn')} key={elem._id}><span>{elem.firstName}, {elem.lastName}</span> <a onClick={e => { removeUserFromGroup(elem) }}>X</a></li>)
                                     }
                                 </ul>
                             </div>
