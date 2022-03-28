@@ -106,7 +106,7 @@ const Detailexpense = () => {
                             <div className='added-members'>
                                 <ul>
                                     {
-                                        addedUsers.length < 1 ? <li className='no-mbrs'>No members yet</li> : addedUsers.map(elem => <li className='member' key={elem._id}><span>{elem.firstName}, {elem.lastName}</span> <a onClick={e => { removeUserFromGroup(elem) }}>X</a></li>)
+                                        addedUsers.length < 1 ? <li className='no-mbrs'>No members yet</li> : addedUsers.map(elem => <li className='member' key={elem._id}><span onClick={e => { removeUserFromGroup(elem) }}>{elem.firstName} {elem.lastName}</span></li>)
                                     }
                                 </ul>
                             </div>
@@ -116,7 +116,7 @@ const Detailexpense = () => {
                                         users.map(elem => {
                                             return(
                                                 <li key={elem._id}>
-                                                    <span>{elem.firstName} {elem.lastName}</span> <a onClick={() => { addUserToGroup(elem) }}>+</a>
+                                                    <span onClick={() => { addUserToGroup(elem) }}>{elem.firstName} {elem.lastName}</span>
                                                 </li>
                                             )
                                         })
