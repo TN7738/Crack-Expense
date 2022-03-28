@@ -26,7 +26,8 @@ const todoCreate = (req, res) => {
     todo
         .create({
             name: req.body.name,
-            list: req.body.list
+            gid: req.body.gid,
+            // list: req.body.list
         }, (err, tododata) => {
             if (err) {
                 sendJSONResponse(res, 400, err);
@@ -72,7 +73,8 @@ const todoUpdateOne = (req, res) => {
                 return
             }
             tododata.name = req.body.name;
-            tododata.list = req.body.list;
+            tododata.gid = req.body.gid;
+            // tododata.list = req.body.list;
             tododata.save((err, tododata) => {
                 if (err) {
                     sendJSONResponse(res, 400, err);

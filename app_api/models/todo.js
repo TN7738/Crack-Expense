@@ -16,6 +16,10 @@ const todoSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    gid: {
+        type: String,
+        required: true
+    },
     list: [listSchema]
 });
 
