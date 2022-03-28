@@ -22,17 +22,19 @@ const header = () => {
 
     const UlContent = props => {
         if (firstName === undefined) {
-            return <ul>
-                <li>
-                    <a href="/login" className='btn'>Login</a>
-                </li>
-                <li>
-                    <a href="/signup" className='btn'>Signup</a>
-                </li>
-            </ul>
+            return(
+                <ul>
+                    <li>
+                        <a href="/login" className='btn'>Login</a>
+                    </li>
+                    <li>
+                        <a href="/signup" className='btn'>Signup</a>
+                    </li>
+                </ul>
+            )
         }
         else {
-            return <ul><li>Hi, {firstName}</li><li><a href="/" onClick={logout}>Logout</a></li></ul>
+            return <ul><li className='usr-name'>Hi, {firstName}</li><li><a className='btn' href='/group'>Groups</a></li><li><a className='logout-btn' href="/" onClick={logout}><img src='/images/logout.png' alt='Logout-Button' /></a></li></ul>
         }
     }
     return (

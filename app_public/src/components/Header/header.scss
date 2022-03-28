@@ -23,6 +23,11 @@ header{
             align-items: center;
             li{
                 margin-right: 25px;
+                &.usr-name{
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: #f2f2f2;
+                }
                 .btn{
                     background-color: #041e38;
                     font-size: 17px;
@@ -31,8 +36,12 @@ header{
                     cursor: pointer;
                     color:#fff;
                     text-decoration: none;
+                }
+                .logout-btn{
+                    img{
+                        height: 27px;
                     }
-                
+                }
                 &:last-child{
                     margin-right: 0;
                 }
