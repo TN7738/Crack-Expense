@@ -15,7 +15,7 @@ const Listingexpense = (props) => {
                 if(curr.gid==props.groupid){
                     temp.push(curr);
                     return;
-                    }
+                }
             });
             setExpenses(temp);
         })
@@ -30,7 +30,14 @@ const Listingexpense = (props) => {
                 <h4>Expenses</h4>
                 <ul>
                     {
-                        expenses.map((expense) => <li key={expense._id}><a href={'/expense/' + expense._id}>{expense.name}{expense.amount}{expense.date}</a></li>)
+                       
+                    }
+                    {
+                        expenses.map((expense) => <li key={expense._id}>
+                                                        <a href={'/expense/' + expense._id}>
+                                                            {expense.name}{expense.amount}{expense.date}
+                                                        </a>
+                                                </li>)
                     }
                 </ul>
             </div>
