@@ -43,7 +43,7 @@ const Detailexpense = () => {
     }, []);
 
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/user/"+uid)
+        axios.get("http://localhost:3000/api/user/"+paidby)
             .then(res => {
                 setPaidbyName(res.data.firstName + " " + res.data.lastName);
             });
@@ -101,7 +101,7 @@ const Detailexpense = () => {
                             <input type="text" className="name" name="name" placeholder='Expense Name' value={name} onChange={e => setName(e.target.value)} required />
                             <input type="number" className="amount" name="amount" placeholder='Total' value={amount} onChange={e => setAmount(e.target.value)} required />
                             <div className='paid-by'>
-                                <span className='ttl'>Paid by:</span> <span className='prsn'>{paidbyName}</span>
+                                <span className='ttl'>Paid by:</span> <span className='prsn'>{paidbyName === "undefined undefined" ? '' : paidbyName}</span>
                             </div>
                             <div className='added-members'>
                                 <ul>
