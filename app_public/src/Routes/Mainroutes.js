@@ -9,6 +9,7 @@ import Creategroup from '../components/Groups/Creategroup/Creategroup';
 import Groupdetails from '../components/Groups/Groupdetails/Groupdetails';
 import Expense from '../components/Expense/Createexpense/Createexpense';
 import Detailexpense from '../components/Expense/Detailexpense/Detailexpense';
+import Createtodo from '../components/todo/Createtodo/Createtodo';
 
 function MainRoutes() {
     return (
@@ -36,6 +37,9 @@ function MainRoutes() {
             </Route>
             <Route exact path="/expense/:id">
                 <Detailexpense />
+            </Route>
+            <Route exact path="/todo/:id">
+                <Createtodo />
             </Route>
         </Router>
     );
