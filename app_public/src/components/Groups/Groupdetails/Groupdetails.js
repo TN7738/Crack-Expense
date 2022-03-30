@@ -36,8 +36,7 @@ const Groupdetails = () => {
             <Header />
             <div className='atf-wrap'>
                 <div className='grid'>
-                    <div className='inner-wrap'>
-                        <div className='left-wrap'>
+                    <div className='grpdetail-wrap'>
                             <h4>{grpDetails}</h4>
                             <ul>
                                 {
@@ -45,7 +44,8 @@ const Groupdetails = () => {
                                 }
                             </ul>
                         </div>
-                        <div className='middle-wrap'>
+                        <div className='inner-wrap'>
+                        <div className='left-wrap'>
                             <Listingexpense groupid = {id} />
                             <Listingtodo groupid = {id} />
                         </div>
