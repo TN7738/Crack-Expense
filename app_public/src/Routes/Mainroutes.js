@@ -10,6 +10,8 @@ import Groupdetails from '../components/Groups/Groupdetails/Groupdetails';
 import Expense from '../components/Expense/Createexpense/Createexpense';
 import Detailexpense from '../components/Expense/Detailexpense/Detailexpense';
 import Contact from '../components/Contact';
+import Createtodo from '../components/todo/Createtodo/Createtodo';
+
 function MainRoutes() {
     return (
         <Router>
@@ -39,6 +41,9 @@ function MainRoutes() {
             </Route>
             <Route exact path="/contact">
                 <Contact />
+            </Route>
+            <Route exact path="/todo/:id">
+                <Createtodo />
             </Route>
         </Router>
     );

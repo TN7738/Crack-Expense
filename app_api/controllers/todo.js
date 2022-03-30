@@ -27,7 +27,7 @@ const todoCreate = (req, res) => {
         .create({
             name: req.body.name,
             gid: req.body.gid,
-            // list: req.body.list
+            list: req.body.list
         }, (err, tododata) => {
             if (err) {
                 sendJSONResponse(res, 400, err);
