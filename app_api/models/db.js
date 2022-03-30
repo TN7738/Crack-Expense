@@ -15,7 +15,7 @@ mongoose.connection.on('disconnected', () => {
 
 
 const gracefulShutDown = (msg, callback) => {
-    mongoose.connection.close( () => {
+    mongoose.connection.close(() => {
         console.log(`Mongoose disconnected through ${msg}`);
         callback();
     });
@@ -33,16 +33,17 @@ process.once('SIGINT', () => {
     gracefulShutDown('app termination', () => {
         process.exit(0);
     });
-}); 
+});
 
 // for heroku app termination
 process.once('SIGTERM', () => {
     gracefulShutDown('Heroku app termination', () => {
         process.exit(0);
     });
-}); 
+});
 
 require('./user');
 require('./group');
 require('./expense');
 require('./todo');
+require('./contact');

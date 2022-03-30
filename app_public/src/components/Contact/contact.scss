@@ -1,0 +1,93 @@
+.contact_wrapper{
+
+        .address{
+            position: relative;
+            
+            .contact-image-container{
+                padding-top: 1em;
+                    .contact-image{
+                        width: 40%;
+                        position: relative;
+                        display: flex;
+                        justify-content: center;
+                        left:30%;
+                      
+                    }
+                    h1{
+                        font-size: 30px;
+                        color: #2e4064;
+                        font-weight: 700;
+                        display: flex;
+                        justify-content: center;
+                        text-align: center;
+                    }
+                }
+            }
+        form{
+            display: relative;
+            background: #2e4064;
+            border-radius: 5px;
+            margin: 0 auto;
+            max-width: 700px;
+            padding: 20px;
+            width: 100%;
+                p:first-of-type {
+                    align-items: flex-start;
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 20px;
+                        label{
+                            width: 48%;
+                                input{
+                                    border: none;
+                                    border-radius: 5px;
+                                    height: 40px;
+                                    outline: none;
+                                    padding: 0 12px;
+                                    width: 100%;
+                                }
+                        }
+                }
+                p{  
+                    color: #fff;
+                    font-size: 14px;
+                        textarea{
+                            border: none;
+                            border-radius: 5px;
+                            height: 70px;
+                            margin-top: 6px;
+                            max-height: 70px;
+                            max-width: 100%;
+                            min-width: 100%;
+                            outline: none;
+                            padding: 5px 3px;
+                        }
+                }
+                p:last-of-type {
+                    align-items: center;
+                    display: flex;
+                    justify-content: center;
+                    margin-top: 20px;
+                        input{
+                            background: #041e38;
+                            border: none;
+                            border-radius: 5px;
+                            color: #fff;
+                            cursor: pointer;
+                            font-size: 14px;
+                            height: 40px;
+                            outline: none;
+                            text-transform: uppercase;
+                            transition: all .45s;
+                            width: 100px;
+                        }
+               }
+            }
+        }
+        .success-msg{
+            font-size: 25px;
+            color:#041e38;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+        }
