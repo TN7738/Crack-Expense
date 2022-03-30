@@ -8,10 +8,13 @@ import Cookies from 'universal-cookie';
 
 const Groups = () => {
     const cookies = new Cookies();
-    const _id = cookies.get('user')['_id'];
     let history = useHistory();
+    let _id;
     if(document.cookie.indexOf('user') === -1){
         history.push("/login");
+    }
+    else{
+        _id = cookies.get('user')['_id'];
     }
     const [groups, setGroups] = useState(null);
     React.useEffect(() => {
