@@ -50,6 +50,7 @@
                     cursor: pointer;
                     &.no-show{
                         cursor: default;
+                        pointer-events: none;
                     }
                     img{
                         height: 25px;

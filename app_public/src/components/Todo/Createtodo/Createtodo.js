@@ -29,8 +29,8 @@ const Createtodo = () => {
 
     const removeFields = (index) => {
         let data = [...inputFields];
-        data.splice(index, 1)
-        setInputFields(data)
+        data.splice(index, 1);
+        setInputFields(data);
     };
 
     const onSubmit = (e) => {
@@ -59,7 +59,7 @@ const Createtodo = () => {
                                     inputFields.map((input, index) => {
                                         return (
                                             <div key={index} className='list-inner-wrap'>
-                                                <input type="text" name='todolist' placeholder={'To-Do' + (index + 1)} value={inputFields.todolist} onChange={e => setTodoList(index, e)} required />
+                                                <input type="text" name='todolist' placeholder={'To-Do' + (index + 1)} value={input.todolist} onChange={e => setTodoList(index, e)} required />
                                                 <a onClick={e => removeFields(index)} className={index === 0 ? 'no-show' : 'show'}><img src={index === 0 ? '/images/remove3.png' : '/images/remove2.png'} alt='Remove-button' /></a>
                                             </div>
                                         )

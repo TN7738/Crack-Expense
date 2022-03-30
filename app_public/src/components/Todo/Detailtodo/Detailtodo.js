@@ -63,7 +63,7 @@ const Detailtodo = () => {
                         <form onSubmit={e => { onSubmit(e) }}>
                             <div className='list-wrap'>
                                 {
-                                    list.map((todo, indx) => <p><label key={indx} htmlFor={indx}>{todo.todolist}<input type="checkbox" id={indx} name={indx} value={indx} defaultChecked={todo.status} onChange={e => setListItem(indx)}></input></label></p>)
+                                    list.map((todo, indx) => <p key={todo._id}><label htmlFor={indx}>{todo.todolist}<input type="checkbox" id={indx} name={indx} value={indx} defaultChecked={todo.status} onChange={e => setListItem(indx)}></input></label></p>)
                                 }
                             </div>
                             <div className='btn-wrap'>
