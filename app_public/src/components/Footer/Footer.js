@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className='footer-wrap'>
       <p>
-          Fantastic Four - Parth Donga, Dhruvi Patel, Tejas Nashikkar, Sandhya Paghdar
+        Fantastic Four - Parth Donga, Dhruvi Patel, Tejas Nashikkar, Sandhya Paghdar
       </p>
     </div>
   )

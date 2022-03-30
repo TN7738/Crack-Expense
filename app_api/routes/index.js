@@ -4,6 +4,7 @@ const cltruser = require('../controllers/user');
 const cltrgroup = require('../controllers/group');
 const cltrexpense = require('../controllers/expense');
 const cltrtodo = require('../controllers/todo');
+const cltrContacts = require('../controllers/contact');
 
 // image items
 router
@@ -45,5 +46,16 @@ router
     .get(cltrtodo.todoReadOne)
     .put(cltrtodo.todoUpdateOne)
     .delete(cltrtodo.todoDeleteOne);
+
+// contact
+router
+    .route('/contact')
+    .get(cltrContacts.contactListAll)
+    .post(cltrContacts.contactListCreate);
+router
+    .route('/contact/:contactid')
+    .get(cltrContacts.contactListReadOne)
+    .put(cltrContacts.contactListUpdateOne)
+    .delete(cltrContacts.contactListDeleteOne);
 
 module.exports = router;
