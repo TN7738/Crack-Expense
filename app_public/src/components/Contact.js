@@ -5,12 +5,13 @@ import Footer from './Footer/Footer';
 
 const Contact = () => {
     return (
-        <><Header />
+        <div className='cntct-wrap'>
+            <Header />
             <div className='atf-wrap'>
                 <Address />
                 <Footer />
             </div>
-        </>
+        </div>
     );
 };
 

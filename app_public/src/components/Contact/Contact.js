@@ -1,8 +1,6 @@
 import React from "react";
 import "./contact.scss";
-import call from "../../components/contact.svg";
 import axios from 'axios';
-
 class Contact extends React.Component {
     constructor(props) {
         super(props);
@@ -48,21 +46,15 @@ class Contact extends React.Component {
         axios.post('http://localhost:3000/api/contact', userData)
             .then(res => {
                 this.setState({
-                    successMsg: "Thank you. I got your message. I will get back shortly."
+                    successMsg: "Thank you. We got your message. We will get back shortly."
                 });
             });
     }
     render() {
 
         return (
-
             <div className="contact_wrapper">
-                <div className="address">
-                    <div className="contact-image-container">
-                        <img className="contact-image" src={call} alt="contact img" />{" "}
-                        <h1>Contact Me</h1>
-                    </div>
-                </div>
+                <h1>Contact Us</h1>
                 <form onSubmit={this.onSubmit}>
                     <p>
                         <label>
@@ -80,13 +72,9 @@ class Contact extends React.Component {
                     <p><input type="submit" value="Submit" /></p>
                 </form>
                 <p className="success-msg">{this.state.successMsg}</p>
-
             </div>
-
-
         );
     }
 }
-
 
 export default Contact;
