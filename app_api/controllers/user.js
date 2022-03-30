@@ -28,7 +28,8 @@ const userCreate = (req, res) => {
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email,
-            password: req.body.password
+            password: req.body.password,
+            premium: false
         }, (err, userdata) => {
             if (err) {
                 sendJSONResponse(res, 400, err);
