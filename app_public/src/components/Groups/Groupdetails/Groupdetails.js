@@ -3,6 +3,7 @@ import './groupdetails.scss';
 import Header from '../../Header/Header';
 import Footer from "../../Footer/Footer";
 import Listingexpense from '../../Expense/Listingexpense/Listingexpense';
+import Listingtodo from '../../Todo/Listingtodo/Listingtodo';
 import axios from 'axios';
 import { useParams, useHistory } from 'react-router-dom';
 
@@ -46,6 +47,7 @@ const Groupdetails = () => {
                         </div>
                         <div className='middle-wrap'>
                             <Listingexpense groupid = {id} />
+                            <Listingtodo groupid = {id} />
                         </div>
                         <div className='right-wrap'>
                             <a className='add-exp' href={'/group/' + id + '/addexpense'}>Add Expense</a>
@@ -54,7 +56,7 @@ const Groupdetails = () => {
                     </div>
                 </div>
             </div>
-           
+           <Footer />
         </div>
 
     );

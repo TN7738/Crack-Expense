@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import './listingexpense.scss';
 import axios from 'axios';
-import { useParams, useHistory } from 'react-router-dom';
 
 const Listingexpense = (props) => {
-    let history = useHistory();
     const [expenses, setExpenses] = useState([]);
 
     React.useEffect( () => {
