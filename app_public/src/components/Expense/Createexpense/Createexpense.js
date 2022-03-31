@@ -18,6 +18,7 @@ const Expense = () => {
     }
     let { id } = useParams();
     const [name, setName] = useState("");
+    const [image, setImage] = useState("");
     const [amount, setAmount] = useState("");
     const [currUser, setCurrUser] = useState("");
     const [addedUsers, setAddedUsers] = useState([]);
@@ -46,7 +47,8 @@ const Expense = () => {
                 date: new Date(),
                 paidby: uid,
                 gmembers: addedUsers,
-                amount: amount
+                amount: amount,
+                img: image.name
             };
 
             axios.post(`http://localhost:3000/api/expense`, expData)
@@ -77,6 +79,7 @@ const Expense = () => {
                         <form onSubmit={e => { onSubmit(e) }}>
                             <input type="text" className="name" name="name" placeholder='Expense Name' value={name} onChange={e => setName(e.target.value)} required />
                             <input type="number" className="amount" name="amount" placeholder='Total' value={amount} onChange={e => setAmount(e.target.value)} required />
+                            <input type="file" name="expenseimage" className="expenseimage" onChange={e => setImage(e.target.files[0])} />
                             <div className='paid-by'>
                                 <span className='ttl'>Paid by:</span> <span className='prsn'>{currUser}</span>
                             </div>
