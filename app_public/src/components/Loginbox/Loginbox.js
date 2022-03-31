@@ -16,7 +16,7 @@ const Loginbox = () => {
             password: password
         };
 
-        axios.get('http://localhost:3000/api/user')
+        axios.get('/api/user')
             .then(res => {
                 let foundFlag = false;
                 res.data.forEach(elem => {

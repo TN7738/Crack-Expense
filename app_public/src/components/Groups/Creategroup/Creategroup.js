@@ -20,7 +20,7 @@ const Creategroup = () => {
     const [users, setUsers] = useState([]);
     const [addedUsers, setAddedUsers] = useState([]);
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/user")
+        axios.get("/api/user")
             .then(res => {
                 res.data.forEach(elem => {
                     uid === elem._id ? setAddedUsers((addedUsers) => [...addedUsers, elem]) : setUsers((users) => [...users, elem]);
@@ -40,7 +40,7 @@ const Creategroup = () => {
                 groupMembers: addedUsers
             };
 
-            axios.post(`http://localhost:3000/api/group`, grpData)
+            axios.post(`/api/group`, grpData)
                 .then(res => {
                     history.push("/group");
                 });

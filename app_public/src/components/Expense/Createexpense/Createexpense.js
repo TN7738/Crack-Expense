@@ -23,11 +23,11 @@ const Expense = () => {
     const [addedUsers, setAddedUsers] = useState([]);
     const [users, setUsers] = useState([]);
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/group/"+id)
+        axios.get("/api/group/"+id)
             .then(res => {
                 return(
                     res.data.groupMembers.forEach(elem => {
-                        axios.get("http://localhost:3000/api/user/"+elem)
+                        axios.get("/api/user/"+elem)
                             .then(res => {
                                 uid === elem ? setCurrUser(res.data.firstName + " " + res.data.lastName) : setUsers((users) => [...users, res.data]);
                             })
@@ -49,7 +49,7 @@ const Expense = () => {
                 amount: amount
             };
 
-            axios.post(`http://localhost:3000/api/expense`, expData)
+            axios.post(`/api/expense`, expData)
                 .then(res => {
                     history.push("/group/"+id);
                 });

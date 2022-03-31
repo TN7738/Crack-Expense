@@ -40,7 +40,7 @@ const Createtodo = () => {
             gid: id,
             list: inputFields
         }
-        axios.post(`http://localhost:3000/api/todo`, todoData)
+        axios.post(`/api/todo`, todoData)
             .then(res => {
                 history.push("/group/" + id);
             });

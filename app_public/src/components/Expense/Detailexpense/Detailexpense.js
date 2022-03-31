@@ -25,7 +25,7 @@ const Detailexpense = () => {
     const [addedUsers, setAddedUsers] = useState([]);
     const [users, setUsers] = useState([]);
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/expense/"+id)
+        axios.get("/api/expense/"+id)
             .then(res => {
                 setExpnsData(res.data);
                 setName(res.data.name);
@@ -33,7 +33,7 @@ const Detailexpense = () => {
                 setPaidby(res.data.paidby);
                 return(
                     res.data.gmembers.forEach(elem => {
-                        axios.get("http://localhost:3000/api/user/"+elem)
+                        axios.get("/api/user/"+elem)
                             .then(res => {
                                 setAddedUsers((addedUsers) => [...addedUsers, res.data]);
                             })
@@ -43,7 +43,7 @@ const Detailexpense = () => {
     }, []);
 
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/user/"+paidby)
+        axios.get("/api/user/"+paidby)
             .then(res => {
                 setPaidbyName(res.data.firstName + " " + res.data.lastName);
             });
@@ -65,7 +65,7 @@ const Detailexpense = () => {
                 gmembers: tmpUsrs,
                 amount: amount
             };
-            const res = axios.put("http://localhost:3000/api/expense"+id, expData);
+            const res = axios.put("/api/expense"+id, expData);
             console.log(res);
             // history.push("/group/"+expnsData.gid);
         }
@@ -84,7 +84,7 @@ const Detailexpense = () => {
     };
 
     const deleteExp = () => {
-        axios.delete("http://localhost:3000/api/expense/"+id)
+        axios.delete("/api/expense/"+id)
         .then(res => {
             history.push("/group/"+expnsData.gid);
         })

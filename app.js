@@ -3,12 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+// const stripe = require("stripe")("sk_test_51Kj8lxHcluK5qSq91YHR7sk1RsRlseDxG7Oh6g7T8QKt9zVSfUdns397ijD1PqFmXpGaYipJNqsfLm9Q4pFjdWjG00raAHB9fq");
+// const uuid = require("uuid");
+// const cors = require("cors");
 
 require('./app_api/models/db');
 
 var apiRoutes = require('./app_api/routes/index');
 
 var app = express();
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'app_server', 'views'));
@@ -18,7 +22,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-// app.use(express.static(path.join(__dirname, 'app_public', '/build')));
+app.use(express.static(path.join(__dirname, 'app_public', 'build')));
 
 app.use("/api", function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -29,6 +33,7 @@ app.use("/api", function (req, res, next) {
   res.header("Access-Control-Allow-Methods", "PUT, POST, GET, DELETE, OPTIONS");
   next();
 });
+// app.use(cors());
 
 app.use('/api', apiRoutes);
 
@@ -47,5 +52,38 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+// app.post("/api/payment", async (req, res) => {
+//   console.log("Request:", req.body);
+
+//   let error;
+//   let status;
+//   try {
+//     const { product, token } = req.body;
+
+//     const customer = await stripe.customers.create({
+//       source: token.id
+//     });
+
+//     const idempotency_key = uuid();
+//     const charge = await stripe.charges.create(
+//       {
+//         amount: product.price * 100,
+//         currency: "cad",
+//         customer: customer.id,
+//       },
+//       {
+//         idempotency_key
+//       }
+//     );
+//     console.log("Charge:", { charge });
+//     status = "success";
+//   } catch (error) {
+//     console.error("Error:", error);
+//     status = "failure";
+//   }
+
+//   res.json({ error, status });
+// });
 
 module.exports = app;

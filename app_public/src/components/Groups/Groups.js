@@ -18,7 +18,7 @@ const Groups = () => {
     }
     const [groups, setGroups] = useState(null);
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/group")
+        axios.get("/api/group")
             .then(res => {
                 let temp = [];
                 res.data.forEach(curr => {

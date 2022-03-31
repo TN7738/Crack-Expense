@@ -12,6 +12,7 @@ import Detailexpense from '../components/Expense/Detailexpense/Detailexpense';
 import Contact from '../components/Contact';
 import Createtodo from '../components/Todo/Createtodo/Createtodo';
 import Detailtodo from '../components/Todo/Detailtodo/Detailtodo';
+import Payment from '../components/Payment/Payment';
 
 function MainRoutes() {
     return (
@@ -48,6 +49,9 @@ function MainRoutes() {
             </Route>
             <Route exact path="/detail-todo/:id">
                 <Detailtodo />
+            </Route>
+            <Route exact path="/payment">
+                <Payment />
             </Route>
         </Router>
     );

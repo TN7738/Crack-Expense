@@ -15,7 +15,7 @@ const Detailtodo = () => {
     const [list, setList] = useState([]);
     
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/todo/"+id)
+        axios.get("/api/todo/"+id)
             .then(res => {
                 setTodos(res.data);
                 return(
@@ -41,14 +41,14 @@ const Detailtodo = () => {
             list: list
         };
 
-        axios.put("http://localhost:3000/api/todo"+id, todoData)
+        axios.put("/api/todo"+id, todoData)
             .then(res => {
                 console.log("success");
             })
     };
 
     const deleteTodo = () => {
-        axios.delete("http://localhost:3000/api/todo/"+id)
+        axios.delete("/api/todo/"+id)
         .then(res => {
             history.push("/group/"+todos.gid);
         })

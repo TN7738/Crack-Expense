@@ -6,7 +6,7 @@ const Listingtodo = (props) => {
     const [todos, setTodos] = useState([]);
 
     React.useEffect( () => {
-        axios.get("http://localhost:3000/api/todo/")
+        axios.get("/api/todo/")
         .then(res => {
             let temp = [];
             res.data.forEach(curr => {
