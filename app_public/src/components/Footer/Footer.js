@@ -10,7 +10,6 @@ const Footer = () => {
           <li>
             <a href='./contact'>Contact Us</a>
           </li>
-          <div className='vl'></div>
           <li>
             <a href='./contact'>About us</a>
           </li>
