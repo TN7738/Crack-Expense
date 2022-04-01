@@ -78,6 +78,7 @@ const userUpdateOne = (req, res) => {
             userdata.lastName = req.body.lastName;
             userdata.email = req.body.email;
             userdata.password = req.body.password;
+            userdata.premium = req.body.premium;
             userdata.save((err, userdata) => {
                 if (err) {
                     sendJSONResponse(res, 400, err);

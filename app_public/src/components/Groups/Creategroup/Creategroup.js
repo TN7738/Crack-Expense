@@ -10,17 +10,17 @@ const Creategroup = () => {
     let history = useHistory();
     let uid;
     const cookies = new Cookies();
-    if(document.cookie.indexOf('user') === -1){
+    if(document.cookie.indexOf('usrDtl') === -1){
         history.push("/login");
     }
     else{
-        uid = cookies.get('user')['_id'];
+        uid = cookies.get('usrDtl')['_id'];
     }
     const [groupName, setGroupName] = useState("");
     const [users, setUsers] = useState([]);
     const [addedUsers, setAddedUsers] = useState([]);
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/user")
+        axios.get("/api/user")
             .then(res => {
                 res.data.forEach(elem => {
                     uid === elem._id ? setAddedUsers((addedUsers) => [...addedUsers, elem]) : setUsers((users) => [...users, elem]);
@@ -40,7 +40,7 @@ const Creategroup = () => {
                 groupMembers: addedUsers
             };
 
-            axios.post(`http://localhost:3000/api/group`, grpData)
+            axios.post(`/api/group`, grpData)
                 .then(res => {
                     history.push("/group");
                 });

@@ -6,7 +6,7 @@ const Listingexpense = (props) => {
     const [expenses, setExpenses] = useState([]);
 
     React.useEffect( () => {
-        axios.get("http://localhost:3000/api/expense/")
+        axios.get("/api/expense/")
         .then(res => {
             let temp = [];
             res.data.forEach(curr => {

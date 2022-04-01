@@ -35,7 +35,7 @@ const Signupbox = (props) => {
             password: newuser.password
         };
 
-        axios.get('http://localhost:3000/api/user')
+        axios.get('/api/user')
             .then(res => {
                 const foundEmail = res.data.some(el => el.email === userData.email);
                 if (foundEmail) {
@@ -43,7 +43,7 @@ const Signupbox = (props) => {
                     newuser.email = '';
                 }
                 else {
-                    axios.post('http://localhost:3000/api/user', userData)
+                    axios.post('/api/user', userData)
                         .then(
                             res => {
                                 history.push("/login");
@@ -54,7 +54,7 @@ const Signupbox = (props) => {
             })
             .catch(err => {
                 if(err.response.status === 404){
-                    axios.post('http://localhost:3000/api/user', userData)
+                    axios.post('/api/user', userData)
                         .then(
                             res => {
                                 history.push("/login");

@@ -6,23 +6,29 @@ import Listingexpense from '../../Expense/Listingexpense/Listingexpense';
 import Listingtodo from '../../Todo/Listingtodo/Listingtodo';
 import axios from 'axios';
 import { useParams, useHistory } from 'react-router-dom';
+import Cookies from 'universal-cookie';
 
 const Groupdetails = () => {
+    const cookies = new Cookies();
+    let isPremium;
     let history = useHistory();
-    if(document.cookie.indexOf('user') === -1){
+    if(document.cookie.indexOf('usrDtl') === -1){
         history.push("/login");
+    }
+    else{
+        isPremium = cookies.get('usrDtl').premium;
     }
     let { id } = useParams();
     const [grpDetails, setGrpDetails] = useState([]);
     const [grpMbrNames, setGrpMbrNames] = useState([]);
     
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/group/"+id)
+        axios.get("/api/group/"+id)
             .then(res => {
                 setGrpDetails(res.data.groupName);
                 return(
                     res.data.groupMembers.forEach(elem => {
-                        axios.get("http://localhost:3000/api/user/"+elem)
+                        axios.get("/api/user/"+elem)
                             .then(res => {
                                 setGrpMbrNames((grpMbrNames) => [...grpMbrNames, res.data.firstName + " " + res.data.lastName]);
                             })
@@ -51,7 +57,7 @@ const Groupdetails = () => {
                         </div>
                         <div className='right-wrap'>
                             <a className='add-exp' href={'/group/' + id + '/addexpense'}>Add Expense</a>
-                            <a className='add-todo' href={'/todo/' + id}>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
+                            <a className='add-todo' href={isPremium ? '/todo/' + id : '/payment/' + id}>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
                         </div>
                     </div>
                 </div>

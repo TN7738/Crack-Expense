@@ -7,7 +7,7 @@ import { useParams, useHistory } from 'react-router-dom';
 
 const Detailtodo = () => {
     let history = useHistory();
-    if(document.cookie.indexOf('user') === -1){
+    if(document.cookie.indexOf('usrDtl') === -1){
         history.push("/login");
     }
     let { id } = useParams();
@@ -15,7 +15,7 @@ const Detailtodo = () => {
     const [list, setList] = useState([]);
     
     React.useEffect(() => {
-        axios.get("http://localhost:3000/api/todo/"+id)
+        axios.get("/api/todo/"+id)
             .then(res => {
                 setTodos(res.data);
                 return(
@@ -37,25 +37,28 @@ const Detailtodo = () => {
 
         const todoData = {
             name: todos.name,
-            gid: id,
+            gid: todos.gid,
             list: list
         };
 
-        axios.put("http://localhost:3000/api/todo"+id, todoData)
+        axios.put("/api/todo/"+id, todoData)
             .then(res => {
-                console.log("success");
-            })
+                const {status} = res;
+                if(status === 200){
+                    history.push("/group/"+todoData.gid);
+                }
+            });
     };
 
     const deleteTodo = () => {
-        axios.delete("http://localhost:3000/api/todo/"+id)
+        axios.delete("/api/todo/"+id)
         .then(res => {
             history.push("/group/"+todos.gid);
         })
     }
     return (
         <div className='dtl-todo-wrap'>
-             <Header />
+            <Header />
             <div className='atf-wrap'>
                 <div className='grid'>
                     <h4>{todos.name}</h4>

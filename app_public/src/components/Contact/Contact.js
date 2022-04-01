@@ -43,7 +43,7 @@ class Contact extends React.Component {
             message: this.state.message
         };
 
-        axios.post('http://localhost:3000/api/contact', userData)
+        axios.post('/api/contact', userData)
             .then(res => {
                 this.setState({
                     successMsg: "Thank you. We got your message. We will get back shortly."

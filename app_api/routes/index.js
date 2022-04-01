@@ -5,6 +5,7 @@ const cltrgroup = require('../controllers/group');
 const cltrexpense = require('../controllers/expense');
 const cltrtodo = require('../controllers/todo');
 const cltrContacts = require('../controllers/contact');
+const cltrStripe = require('../controllers/stripe');
 
 // image items
 router
@@ -57,5 +58,9 @@ router
     .get(cltrContacts.contactListReadOne)
     .put(cltrContacts.contactListUpdateOne)
     .delete(cltrContacts.contactListDeleteOne);
+
+router
+    .route('/payment')
+    .post(cltrStripe.stripeCreate);
 
 module.exports = router;
