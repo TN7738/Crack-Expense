@@ -45,7 +45,7 @@ const Payment = () => {
                 <div className='grid'>
                     <div className='inner-wrap'>
                         <div className='left-wrap'>
-                            <h4>Lets get you going with the To-Do list</h4>
+                            <h4>Let's get you going with the To-Do list</h4>
                             <p>Create, update and share your To-Do list with your friends and family. All the members in your group can access your list.</p>
                             <StripeCheckout
                                 stripeKey="pk_test_51Kj8lxHcluK5qSq9gZypTTFEc56GG0TlvZWcI6VGkgThSp55MRkXfUMaNaZ2ZlO4d7xrf3PumIAry9MLSiSPNwCl005xTqZcWD"
