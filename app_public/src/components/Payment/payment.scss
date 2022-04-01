@@ -1,0 +1,70 @@
+.payment-wrap{
+    .grid{
+        height: 100%;
+        .inner-wrap{
+            height: 80%;
+            min-height: 450px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .left-wrap{
+                h4{
+                    color: #2e4064;
+                    font-size: 28px;
+                    font-weight: 700;
+                }
+                p{
+                    font-size: 20px;
+                    max-width: 500px;
+                    padding: 30px 0;
+                    line-height: 1.7;
+                }
+                .btn{
+                    background-color: #041e38;
+                    border-radius: 5px;
+                    color: #fff;
+                    cursor: pointer;
+                    font-size: 20px;
+                    padding: 11px 33px;
+                    text-decoration: none;
+                    border: none;
+                    transition: all 450ms;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+            }
+            .right-wrap{
+                position: relative;
+                width: calc(100% - 600px);
+                height: 100%;
+                img{
+                    position: absolute;
+                    &.img1{
+                        left: 90px;
+                        height: 370px;
+                        top: 50%;
+                        margin-top: -185px;
+                        transform: rotate(5deg);
+                    }
+                    &.img2{
+                        right: 0px;
+                        height: 300px;
+                        top: 50%;
+                        margin-top: -150px;
+                        transform: rotate(-3deg);
+                    }
+                }
+            }
+        }
+        .disc{
+            text-align: center;
+            padding: 0px 120px;
+            font-size: 20px;
+            color: red;
+            span{
+                font-weight: 700;
+            }
+        }
+    }
+}

@@ -43,21 +43,26 @@ const Payment = () => {
             <Header />
             <div className='atf-wrap'>
                 <div className='grid'>
-                    <div className='left-wrap'>
-                        <h4>Lets get you going with the To-Do list</h4>
-                        <p>Create, update and share your To-Do list with your friends or family. All the members in your group can access your list.</p>
+                    <div className='inner-wrap'>
+                        <div className='left-wrap'>
+                            <h4>Lets get you going with the To-Do list</h4>
+                            <p>Create, update and share your To-Do list with your friends and family. All the members in your group can access your list.</p>
+                            <StripeCheckout
+                                stripeKey="pk_test_51Kj8lxHcluK5qSq9gZypTTFEc56GG0TlvZWcI6VGkgThSp55MRkXfUMaNaZ2ZlO4d7xrf3PumIAry9MLSiSPNwCl005xTqZcWD"
+                                token={handleToken}
+                                amount={details.amount * 100}>
+                                    <button className='btn'>Go Premium</button>
+                            </StripeCheckout>
+                        </div>
+                        <div className='right-wrap'>
+                            <img className='img1' src='/images/todo1-pay.jpg' alt='Todo-promo-image1' />
+                            <img className='img2' src='/images/todo2-pay.jpg' alt='Todo-promo-image2' />
+                        </div>
                     </div>
-                    <div className='right-wrap'>
-
-                    </div>
+                    <p className='disc'><span>Disclaimer:</span><br />This website do-not sell any product or subscription. The payment gateway is purely for educational and demonstration purposes only. If you are a visitor to website, please do-not proceed to pay. Owners of this website will not be liable for any kind of transaction.</p>
                 </div>
             </div>
-            <StripeCheckout
-                stripeKey="pk_test_51Kj8lxHcluK5qSq9gZypTTFEc56GG0TlvZWcI6VGkgThSp55MRkXfUMaNaZ2ZlO4d7xrf3PumIAry9MLSiSPNwCl005xTqZcWD"
-                token={handleToken}
-                amount={details.amount * 100}>
-                    <button className='btn'>Go Premium</button>
-            </StripeCheckout>
+            <Footer />
         </div>
     );
 }
