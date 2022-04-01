@@ -2,7 +2,6 @@ import React from 'react';
 import './homepage.scss';
 import Typewriter from "../Typewriter/Typewriter";
 import Slider from '../Slider/Slider';
-import Groups from '../Groups/Groups';
 
 const Homepage = () => {
     return (

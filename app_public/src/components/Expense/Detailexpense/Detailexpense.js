@@ -100,7 +100,6 @@ const Detailexpense = () => {
                 <div className='grid'>
                     <h4>{name}</h4>
                     <div className='inner-wrap'>
-                        <a className='dlt' onClick={e => { deleteExp() }}><img src='/images/delete.png' alt='Delete-button' /></a>
                         <form onSubmit={e => { onSubmit(e) }}>
                             <input type="text" className="name" name="name" placeholder='Expense Name' value={name} onChange={e => setName(e.target.value)} required />
                             <input type="number" className="amount" name="amount" placeholder='Total' value={amount} onChange={e => setAmount(e.target.value)} required />
@@ -127,8 +126,28 @@ const Detailexpense = () => {
                                     }
                                 </ul>
                             </div>
-                            <input type="submit" className="create-btn" value="Update"></input>
+                            <div className='btn-wrap'>
+                                <input type="submit" className="create-btn" value="Update"></input>
+                                <a className='dlt' onClick={e => { deleteExp() }}><img src='/images/delete.png' alt='Delete-button' /></a>
+                            </div>
                         </form>
+                    </div>
+                    <div className='sumry-wrap'>
+                        <p><span className='bld'>Summary:</span><br /> <span className='mbr'>{paidbyName === "undefined undefined" ? '' : paidbyName}</span> paid <span className='bld'>${amount}</span>.</p>
+                        <p>
+                            <ul>
+                                {
+                                    addedUsers.map(elem => {
+                                        return (
+                                            <li key={elem._id}>
+                                                <span className='mbr'>{elem.firstName} {elem.lastName}</span>
+                                            </li>
+                                        )
+                                    })
+                                }
+                            </ul>
+                            <span className='ows'>owes</span> <span className='bld'> ${Math.round(parseFloat(amount) / (addedUsers.length + 1) * 100) / 100}</span> {addedUsers.length === 1 ? '' : 'each'}.
+                        </p>
                     </div>
                 </div>
             </div>
