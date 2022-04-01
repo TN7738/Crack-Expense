@@ -22,13 +22,13 @@ const Loginbox = () => {
                 res.data.forEach(elem => {
                     if (elem.email === userData.email && elem.password === userData.password) {
                         foundFlag = true;
-                        userData = { ...userData, firstName: elem.firstName, lastName: elem.lastName, _id: elem._id, premium: false };
+                        userData = { ...userData, firstName: elem.firstName, lastName: elem.lastName, _id: elem._id, premium: elem.premium };
                         return;
                     }
                 });
                 if (foundFlag) {
                     const cookies = new Cookies();
-                    cookies.set('user', userData);
+                    cookies.set('usrDtl', userData);
                     history.push("/");
                 }
             });

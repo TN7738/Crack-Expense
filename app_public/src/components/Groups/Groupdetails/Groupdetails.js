@@ -12,11 +12,11 @@ const Groupdetails = () => {
     const cookies = new Cookies();
     let isPremium;
     let history = useHistory();
-    if(document.cookie.indexOf('user') === -1){
+    if(document.cookie.indexOf('usrDtl') === -1){
         history.push("/login");
     }
     else{
-        isPremium = cookies.get('user').premium;
+        isPremium = cookies.get('usrDtl').premium;
     }
     let { id } = useParams();
     const [grpDetails, setGrpDetails] = useState([]);
@@ -57,7 +57,7 @@ const Groupdetails = () => {
                         </div>
                         <div className='right-wrap'>
                             <a className='add-exp' href={'/group/' + id + '/addexpense'}>Add Expense</a>
-                            <a className='add-todo' href={isPremium ? '/todo/' + id : '/payment/'}>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
+                            <a className='add-todo' href={isPremium ? '/todo/' + id : '/payment/' + id}>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
                         </div>
                     </div>
                 </div>

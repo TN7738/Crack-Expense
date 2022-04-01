@@ -10,11 +10,11 @@ const Detailexpense = () => {
     let history = useHistory();
     const cookies = new Cookies();
     let uid;
-    if(document.cookie.indexOf('user') === -1){
+    if(document.cookie.indexOf('usrDtl') === -1){
         history.push("/login");
     }
     else{
-        uid = cookies.get('user')['_id'];
+        uid = cookies.get('usrDtl')['_id'];
     }
     let { id } = useParams();
     const [expnsData, setExpnsData] = useState([]);
@@ -65,9 +65,13 @@ const Detailexpense = () => {
                 gmembers: tmpUsrs,
                 amount: amount
             };
-            const res = axios.put("/api/expense"+id, expData);
-            console.log(res);
-            // history.push("/group/"+expnsData.gid);
+            axios.put("/api/expense/"+id, expData)
+                .then(res => {
+                    const {status} = res;
+                    if(status === 200){
+                        history.push("/group/"+expnsData.gid);
+                    }
+                });
         }
     };
 

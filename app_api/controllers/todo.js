@@ -74,7 +74,7 @@ const todoUpdateOne = (req, res) => {
             }
             tododata.name = req.body.name;
             tododata.gid = req.body.gid;
-            // tododata.list = req.body.list;
+            tododata.list = req.body.list;
             tododata.save((err, tododata) => {
                 if (err) {
                     sendJSONResponse(res, 400, err);

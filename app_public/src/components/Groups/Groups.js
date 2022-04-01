@@ -10,11 +10,11 @@ const Groups = () => {
     const cookies = new Cookies();
     let history = useHistory();
     let _id;
-    if(document.cookie.indexOf('user') === -1){
+    if(document.cookie.indexOf('usrDtl') === -1){
         history.push("/login");
     }
     else{
-        _id = cookies.get('user')['_id'];
+        _id = cookies.get('usrDtl')['_id'];
     }
     const [groups, setGroups] = useState(null);
     React.useEffect(() => {
@@ -36,7 +36,7 @@ const Groups = () => {
             });
     }, []);
     const toCreateGroup = () => {
-        if(document.cookie.indexOf('user') !== -1){
+        if(document.cookie.indexOf('usrDtl') !== -1){
             history.push("/create-group");
         }
     };

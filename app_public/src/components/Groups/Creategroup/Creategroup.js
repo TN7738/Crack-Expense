@@ -10,11 +10,11 @@ const Creategroup = () => {
     let history = useHistory();
     let uid;
     const cookies = new Cookies();
-    if(document.cookie.indexOf('user') === -1){
+    if(document.cookie.indexOf('usrDtl') === -1){
         history.push("/login");
     }
     else{
-        uid = cookies.get('user')['_id'];
+        uid = cookies.get('usrDtl')['_id'];
     }
     const [groupName, setGroupName] = useState("");
     const [users, setUsers] = useState([]);

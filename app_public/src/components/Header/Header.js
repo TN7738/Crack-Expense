@@ -11,12 +11,12 @@ const header = () => {
     };
 
     let firstName;
-    if (document.cookie.indexOf('user') !== -1) {
-        firstName = cookies.get('user')['firstName'];
+    if (document.cookie.indexOf('usrDtl') !== -1) {
+        firstName = cookies.get('usrDtl')['firstName'];
     }
 
     const logout = () => {
-        cookies.remove('user');
+        cookies.remove('usrDtl', { path: '/' });
         notify("Logged out successfully");
     }
 

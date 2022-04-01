@@ -50,7 +50,7 @@ function MainRoutes() {
             <Route exact path="/detail-todo/:id">
                 <Detailtodo />
             </Route>
-            <Route exact path="/payment">
+            <Route exact path="/payment/:id">
                 <Payment />
             </Route>
         </Router>

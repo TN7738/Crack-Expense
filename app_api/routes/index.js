@@ -61,7 +61,6 @@ router
 
 router
     .route('/payment')
-    // .get(cltrStripe.stripeListAll)
     .post(cltrStripe.stripeCreate);
 
 module.exports = router;

@@ -3,11 +3,13 @@ import './createtodo.scss';
 import Header from '../../Header/Header';
 import Footer from "../../Footer/Footer";
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 import { useParams, useHistory } from 'react-router-dom';
 
 const Createtodo = () => {
     let history = useHistory();
-    if(document.cookie.indexOf('user') === -1){
+    const cookies = new Cookies();
+    if(document.cookie.indexOf('usrDtl') === -1){
         history.push("/login");
     }
     let { id } = useParams();

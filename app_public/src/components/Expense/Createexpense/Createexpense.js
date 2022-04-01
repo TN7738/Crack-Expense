@@ -10,11 +10,11 @@ const Expense = () => {
     let history = useHistory();
     const cookies = new Cookies();
     let uid;
-    if(document.cookie.indexOf('user') === -1){
+    if(document.cookie.indexOf('usrDtl') === -1){
         history.push("/login");
     }
     else{
-        uid = cookies.get('user')['_id'];
+        uid = cookies.get('usrDtl')['_id'];
     }
     let { id } = useParams();
     const [name, setName] = useState("");

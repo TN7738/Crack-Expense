@@ -1,9 +1,16 @@
 import React, { useState } from 'react';
 import './listingtodo.scss';
 import axios from 'axios';
+import Cookies from 'universal-cookie';
 
 const Listingtodo = (props) => {
+    const cookies = new Cookies();
+    let isPremium;
     const [todos, setTodos] = useState([]);
+
+    if(document.cookie.indexOf('usrDtl') !== -1){
+        isPremium = cookies.get('usrDtl').premium;
+    }
 
     React.useEffect( () => {
         axios.get("/api/todo/")
@@ -27,7 +34,7 @@ const Listingtodo = (props) => {
             <h4>To-Dos</h4>
             <ul>
                 {
-                    todos === null || todos.length === 0 ? <li>You don't have any To-Dos yet</li> : todos.map(todo => <li key={todo._id}><a href={'/detail-todo/' + todo._id}>{todo.name}</a></li>)
+                    todos === null || todos.length === 0 ? <li>You don't have any To-Dos yet</li> : todos.map(todo => <li key={todo._id}><a href={isPremium ? '/detail-todo/' + todo._id : '/payment/' + props.groupid}>{todo.name}</a></li>)
                 }
             </ul>
         </div>

@@ -6,42 +6,26 @@ const sendJSONResponse = (res, status, content) => {
     res.json(content);
 };
 
-// const stripeListAll = (req, res) => {
-//     stripe
-//         .find()
-//         .exec((err, stripedata) => {
-//             if (err) {
-//                 sendJSONResponse(res, 404, err);
-//                 return;
-//             } else if (stripedata.length <= 0) {
-//                 sendJSONResponse(res, 404, { 'message': 'stripe list empty' });
-//                 return;
-//             } else {
-//                 sendJSONResponse(res, 200, stripedata);
-//             }
-//         });
-// };
-
 const stripeCreate = (req, res) => {
     // console.log(res);
-    stripe
-        .create({
-            token: req.body.token,
-            idempotencyKey: uuid()
-        }, (err, stripedata) => {
-            if (err) {
-                sendJSONResponse(res, 400, err);
-            } else {
-                stripe.charges.create({
-                    amount: token.price * 100,
-                    currency: 'cad'
-                }, {idempotencyKey});
-                sendJSONResponse(res, 200, stripedata);
-            }
-        });
+    try{
+        stripe
+            .customers.create({
+                token: req.body.token,
+                idempotencyKey: uuid.v4()
+            }, (err, stripedata) => {
+                if (err) {
+                    sendJSONResponse(res, 400, err);
+                } else {
+                    sendJSONResponse(res, 200, stripedata);
+                }
+            });
+    }
+    catch(err){
+        console.log("error", err);
+    }
 };
 
 module.exports = {
-    // stripeListAll,
     stripeCreate
 }
