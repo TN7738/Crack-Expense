@@ -16,21 +16,6 @@
             text-align: center;
             margin: 0 auto;
             position: relative;
-            .dlt{
-                width: 20px;
-                height: 20px;
-                cursor: pointer;
-                transition: all 450ms;
-                position: absolute;
-                right: 15px;
-                top: 15px;
-                &:hover{
-                    transform: scale(1.1);
-                }
-                img{
-                    height: 20px;
-                }
-            }
             input[type=text], input[type=number]{
                 height: 40px;
                 outline: none;
@@ -87,9 +72,6 @@
                             display: flex;
                             align-items: center;
                             margin-top: 7px;
-                            &:first-child {
-                                margin-top: 0;
-                            }
                             span {
                                 padding: 5px 9px;
                                 background: #c2c2c2;
@@ -114,6 +96,15 @@
                                     top: 50%;
                                     transform: translateY(-50%);
                                     background: url('../../../../public/images/remove.png') center / 100% 100% no-repeat;
+                                }
+                            }
+                            &:first-child {
+                                margin-top: 0;
+                                pointer-events: none;
+                                span{
+                                    &:after{
+                                        display: none;
+                                    }
                                 }
                             }
                         }
@@ -160,22 +151,88 @@
                     }
                 }
             }
-            .create-btn {
-                display: flex;
-                justify-content: center;
+            .btn-wrap{
                 align-items: center;
-                width: 100%;
-                text-align: center;
-                height: 40px;
-                background: #2E4064;
-                border-radius: 20px;
-                color: #fff;
-                font-size: 18px;
-                font-weight: 700;
-                cursor: pointer;
-                transition: all 450ms;
-                border: none;
+                display: flex;
+                justify-content: space-between;
                 margin-top: 20px;
+                .create-btn {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: calc(100% - 30px);
+                    text-align: center;
+                    height: 40px;
+                    background: #2E4064;
+                    border-radius: 20px;
+                    color: #fff;
+                    font-size: 18px;
+                    font-weight: 700;
+                    cursor: pointer;
+                    transition: all 450ms;
+                    border: none;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                }
+                .dlt{
+                    cursor: pointer;
+                    height: 20px;
+                    transition: all .45s;
+                    width: 20px;
+                    &:hover{
+                        transform: scale(1.1);
+                    }
+                    img{
+                        height: 20px;
+                    }
+                }
+            }
+        }
+        .sumry-wrap{
+            text-align: center;
+            padding-top: 20px;
+            font-size: 15px;
+            line-height: 1.9;
+            max-width: 700px;
+            width: 100%;
+            margin: 0 auto;
+            p{
+                .bld{
+                    font-weight: 700;
+                }
+                .ows{
+                    padding-right: 5px;
+                }
+                .mbr{
+                    background: #c2c2c2;
+                    border-radius: 20px;
+                    font-size: 12px;
+                    font-weight: 600;
+                    padding: 1px 7px;
+                }
+                &:first-of-type{
+                    .mbr{
+                        font-size: 15px;
+                    }
+                }
+                &:last-of-type{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    ul{
+                        padding-right: 5px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        li{
+                            margin-left: 5px;
+                            &:first-child{
+                                margin-left: 0;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
