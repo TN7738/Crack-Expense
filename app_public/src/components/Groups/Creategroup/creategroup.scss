@@ -1,31 +1,38 @@
 .create-grp-wrap{
     h4{
         text-align: center;
-        font-size: 24px;
+        font-size: 25px;
         font-weight: 700;
         color: #2E4064;
         padding: 40px 0;
     }
     .inner-wrap{
-        padding: 20px 40px;
+        padding: 73px 78px;
         border: solid 1px #2E4064;
         border-radius: 30px;
         width: 100%;
-        max-width: 300px;
+        max-width: 600px;
         text-align: center;
         margin: 0 auto;
+        background-color: #00274f;
+        box-shadow:  34px 26px 20px #2E4063;
+        height: 482px;
+
         input[type=text]{
-            height: 40px;
+            height: 49px;
             outline: none;
-            border-radius: 20px;
+            border-radius: 44px;
             padding: 0 20px;
-            width: 100%;
+            width: 58%;
             text-align: center;
             border: solid 1px #e3d7d7;
             text-transform: capitalize;
+            margin-bottom: 19px;
         }
         .added-members{
-            margin: 20px 0;
+            display: flex;
+            flex-wrap: wrap;
+            margin: 21px 18px;
             background-color: #fff;
             border-radius: 20px;
             min-height: 100px;
@@ -33,9 +40,15 @@
             padding: 20px;
             ul{
                 height: 100%;
+                width: 100%;
                 position: relative;
                 text-align: left;
                 min-height: 60px;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                flex-wrap: wrap;
+                margin: 0 auto;
                 li{
                     &.no-mbrs{
                         position: absolute;
@@ -52,9 +65,6 @@
                         justify-self: center;
                         margin-top: 7px;
                         position: relative;
-                        &:first-child{
-                            margin-top: 0;
-                        }
                         span{
                             padding: 5px 29px 5px 15px;
                             background: #c2c2c2;
@@ -84,6 +94,7 @@
                         &.hide-btn{
                             span{
                                 cursor: default;
+                                pointer-events: none;
                                 &:hover{
                                     box-shadow: none;
                                     -webkit-box-shadow: none;
@@ -101,18 +112,22 @@
         .members-wrap{
             text-align-last: left;
             ul{
+                width: 59%;
+                display: inline-block;
+                margin-left: 87px;
                 li{
                     display: flex;
                     align-items: center;
                     justify-content: center;
-                    text-align-last: left;
+                    text-align: left;
                     margin-top: 7px;
+                    margin-bottom: 21px;
                     position: relative;
                     &:first-child{
                         margin-top: 0;
                     }
                     span{
-                        padding: 5px 29px 5px 15px;
+                        padding: 8px 29px 8px 15px;
                         background: #c2c2c2;
                         border-radius: 20px;
                         font-size: 13px;
@@ -144,13 +159,15 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
+            width: 33%;
+            margin: 0 auto;
+            /* margin-left: 110px; */
             text-align: center;
-            height: 40px;
-            background: #2E4064;
+            height: 46px;
+            background: #8799c8;
             border-radius: 20px;
             color: #fff;
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 700;
             cursor: pointer;
             transition: all 450ms;

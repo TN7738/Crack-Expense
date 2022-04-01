@@ -31,7 +31,7 @@ const Detailexpense = () => {
                 setName(res.data.name);
                 setAmount(res.data.amount);
                 setPaidby(res.data.paidby);
-                return(
+                return (
                     res.data.gmembers.forEach(elem => {
                         axios.get("/api/user/"+elem)
                             .then(res => {
@@ -52,7 +52,7 @@ const Detailexpense = () => {
     const onSubmit = (e) => {
         e.preventDefault();
 
-        if(addedUsers.length >= 1){
+        if (addedUsers.length >= 1) {
             let tmpUsrs = [];
             addedUsers.forEach(user => {
                 tmpUsrs.push(user._id);
@@ -118,7 +118,7 @@ const Detailexpense = () => {
                                 <ul>
                                     {
                                         users.map(elem => {
-                                            return(
+                                            return (
                                                 <li key={elem._id}>
                                                     <span onClick={() => { addUserToGroup(elem) }}>{elem.firstName} {elem.lastName}</span>
                                                 </li>
