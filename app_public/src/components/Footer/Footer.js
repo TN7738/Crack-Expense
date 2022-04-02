@@ -8,10 +8,10 @@ const Footer = () => {
       <div className='parent-wrap'>
         <ul>
           <li>
-            <a href='./contact'>Contact Us</a>
+            <a href='/contact'>Contact Us</a>
           </li>
           <li>
-            <a href='./about'>About us</a>
+            <a href='/about'>About us</a>
           </li>
         </ul>
       </div>

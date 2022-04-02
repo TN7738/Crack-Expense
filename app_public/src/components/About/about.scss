@@ -39,6 +39,14 @@
                         font-size: 20px;
                         font-weight: 800;
                     }
+                    .eml{
+                        font-size: 13px;
+                        padding: 5px 0;
+                        a{
+                            color: #4c4cef;
+                            cursor: pointer;
+                        }
+                    }
 
                     .button {
                         border: none;
@@ -95,5 +103,21 @@
                 }
             }
         }
+    }
+    @media only screen and (max-width: 1090px){
+        .atf-wrap{
+            min-height: 2200px;
+            .row{
+                flex-flow: column;
+                .column{
+                    margin-top: 25px;
+                    width: 100%;
+                    max-width: 220px;
+                    &:first-of-type{
+                        margin-top: 0;
+                    }
+                }
+            }
+        }    
     }
 }

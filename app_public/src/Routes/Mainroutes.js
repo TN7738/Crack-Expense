@@ -57,6 +57,9 @@ function MainRoutes() {
             <Route exact path="/payment/:id">
                 <Payment />
             </Route>
+            <Route exact path="/payment/:id/:todoid">
+                <Payment />
+            </Route>
         </Router>
     );
 };
