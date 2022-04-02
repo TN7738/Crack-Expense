@@ -51,14 +51,22 @@ const Groupdetails = () => {
                             </ul>
                         </div>
                         <div className='inner-wrap'>
-                        <div className='left-wrap'>
-                            <Listingexpense groupid = {id} />
-                            <Listingtodo groupid = {id} />
-                        </div>
-                        <div className='right-wrap'>
-                            <a className='add-exp' href={'/group/' + id + '/addexpense'}>Add Expense</a>
-                            <a className='add-todo' href={isPremium ? '/todo/' + id : '/payment/' + id}>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
-                        </div>
+                            <div className='exp-wrap'>
+                                <div className='left-wrap'>
+                                    <Listingexpense groupid = {id} />
+                                </div>
+                                <div className='right-wrap'>
+                                    <a className='add-exp' href={'/group/' + id + '/addexpense'}>Add Expense</a>
+                                </div>
+                            </div>
+                            <div className='td-wrap'>
+                                <div className='left-wrap'>
+                                    <Listingtodo groupid = {id} />
+                                </div>
+                                <div className='right-wrap'>
+                                    <a className='add-todo' href={isPremium ? '/todo/' + id : '/payment/' + id}>Add To-Do<img src='/images/premium.png' alt='premium-badge' /></a>
+                                </div>
+                            </div>
                     </div>
                 </div>
             </div>

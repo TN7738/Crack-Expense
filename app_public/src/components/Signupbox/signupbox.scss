@@ -1,9 +1,16 @@
+.sngup-afterwrap{
+    .atf-wrap{
+        min-height: 780px;
+    }
+    .grid{
+        height: 100%;
+    }
+}
 .signupbox-wrap{
-    height: 100vh;
+    height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 15px;
     background-color: transparent;
     .container{
         width: 100%;
@@ -36,11 +43,10 @@
             }
         }
         .title{
-                    color: aliceblue;
-                    margin-bottom: 29px;
-                    font-size: 25px;
-                }
-
+            color: aliceblue;
+            margin-bottom: 29px;
+            font-size: 25px;
+        }
         input{
             width: 100%;
             border: 1px solid #000;
@@ -52,9 +58,6 @@
             font-size: 14px;
             padding: 0 20px;
             margin-bottom: 20px;
-            // &:first-of-type{
-            //     margin-bottom: 60px;
-            // }
             &::placeholder{
                 color: #000;
             }
@@ -64,22 +67,37 @@
             width: 80px;
             height: 80px;
             border-radius: 40px;
-            // border: solid 1px #333;
             display: flex;
             font-weight: 700;
             justify-content: center;
             align-items: center;
             color: #1d3557;
-            bottom: -40px;
+            bottom: -60px;
             left: 50%;
-            transform: translateX(-50%);
+            margin-left: -40px;
             background-color: #fff;
+            cursor: pointer;
+            transition: all 450ms;
+            &:hover{
+                transform: scale(1.1);
+            }
         }
-        .Login-link{
+        .login-link{
             color:#fff;
             position: absolute;
             bottom: 59px;
             right: 100px;
+            &:hover{
+                text-decoration: none;
+            }
+            @media only screen and (max-width: 660px){
+                bottom: 62px;
+                right: 50%;
+                transform: translateX(50%);
+            }
+        }
+        @media only screen and (max-width: 660px){
+            padding: 90px 30px;
         }
     }
 }

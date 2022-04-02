@@ -4,4 +4,7 @@
     color: #2E4064;
     font-weight: 700;
     text-align: center;
+    @media only screen and (max-width: 800px){
+        font-size: 37px;
+    }
 }

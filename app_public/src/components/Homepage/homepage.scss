@@ -1,4 +1,10 @@
 .home-wrap{
+    .atf-wrap{
+        min-height: 730px;
+        @media only screen and (max-width: 800px){
+            min-height: 910px;
+        }
+    }
     .grid{
         height: 100%;  
     }
