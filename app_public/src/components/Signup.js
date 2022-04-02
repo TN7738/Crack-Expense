@@ -6,18 +6,17 @@ import Footer from "./Footer/Footer";
 
 const Signup = () => {
     return (
-        <><Header />
-        <div className="home-wrap">
-            <div className='atf-wrap'>
-                <div className='grid'>
-        <div className="signupbox-wrap">
-            <Signupbox />
+        <div className="sngup-afterwrap">
+            <Header />
+            <div className="sngup-wrap">
+                <div className='atf-wrap'>
+                    <div className='grid'>
+                        <Signupbox />
+                    </div>
+                </div>
+            </div>
+            <Footer />
         </div>
-        </div>
-        </div>
-        </div>
-        <Footer />
-        </>
     );
 };
 

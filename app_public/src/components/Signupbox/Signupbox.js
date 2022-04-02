@@ -77,7 +77,7 @@ const Signupbox = (props) => {
                     <input type="text" value={newuser.lastName} className="name" name="lastName" placeholder='Last Name' onChange={handleChange} required />
                     <input type="text" value={newuser.email} className="emailid" name="email" id="email" placeholder='Email' onChange={handleChange} required />
                     <input type="password" value={newuser.password} className="password" name="password" placeholder='Password' onChange={handleChange} required />
-                    <a className="Login-link" href="/login">Already a member?</a>
+                    <a className="login-link" href="/login">Already a member?</a>
                     <input type="submit" className="signup-btn" value="Signup"></input>
                 </form>
             </div>

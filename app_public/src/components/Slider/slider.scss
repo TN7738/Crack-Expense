@@ -1,6 +1,7 @@
 .slider-wrap{
     position: relative;
     height: calc(100vh - 270px);
+    min-height: 500px;
     .swiper {
         height: 100%;
     }
@@ -36,6 +37,29 @@
         .right-wrap > img {
             width: 70%;
             margin: 0 15%;
+        }
+    }
+    @media only screen and (max-width: 800px){
+        min-height: 630px;
+        .parent-wrap{
+            text-align: center;
+            flex-flow: column;
+            justify-content: flex-start;
+            .left-wrap{
+                h2{
+                    font-size: 45px;
+                }
+                p{
+                    font-size: 21px;
+                }
+            }
+            .right-wrap{
+                img{
+                    width: 100%;
+                    margin: 40px auto 0;
+                    height: 250px;
+                }
+            }
         }
     }
 }

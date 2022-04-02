@@ -184,10 +184,11 @@ body * {
 
 .atf-wrap {
   position: relative;
-  height: calc(100vh - 80px);
+  /* height: calc(100vh - 80px); */
+  height: 100vh;
   min-height: 450px;
   background: radial-gradient(#3674ce, #e3e3ec, #061433);
-
+  padding: 120px 0 50px;
 }
 
 .atf-wrap:after {

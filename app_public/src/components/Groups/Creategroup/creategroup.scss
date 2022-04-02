@@ -1,13 +1,16 @@
 .create-grp-wrap{
+    .atf-wrap{
+        min-height: 770px;
+    }
     h4{
         text-align: center;
         font-size: 25px;
         font-weight: 700;
         color: #2E4064;
-        padding: 40px 0;
+        padding: 0 0 20px;
     }
     .inner-wrap{
-        padding: 73px 78px;
+        padding: 30px 78px;
         border: solid 1px #2E4064;
         border-radius: 30px;
         width: 100%;
@@ -16,14 +19,14 @@
         margin: 0 auto;
         background-color: #00274f;
         box-shadow:  34px 26px 20px #2E4063;
-        height: 482px;
 
         input[type=text]{
             height: 49px;
             outline: none;
             border-radius: 44px;
             padding: 0 20px;
-            width: 58%;
+            max-width: 340px;
+            width: 100%;
             text-align: center;
             border: solid 1px #e3d7d7;
             text-transform: capitalize;
@@ -112,20 +115,19 @@
         .members-wrap{
             text-align-last: left;
             ul{
-                width: 59%;
-                display: inline-block;
-                margin-left: 87px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: column;
                 li{
                     display: flex;
                     align-items: center;
                     justify-content: center;
                     text-align: left;
-                    margin-top: 7px;
                     margin-bottom: 21px;
                     position: relative;
-                    &:first-child{
-                        margin-top: 0;
-                    }
+                    max-width: 210px;
+                    width: 100%;
                     span{
                         padding: 8px 29px 8px 15px;
                         background: #c2c2c2;
@@ -156,26 +158,27 @@
             }
         }
         .create-btn{
-            display: flex;
-            justify-content: center;
             align-items: center;
-            width: 33%;
-            margin: 0 auto;
-            /* margin-left: 110px; */
-            text-align: center;
-            height: 46px;
-            background: #8799c8;
-            border-radius: 20px;
-            color: #fff;
+            background: #fff;
+            border: none;
+            border-radius: 5px;
+            color: #00274f;
+            cursor: pointer;
+            display: flex;
             font-size: 20px;
             font-weight: 700;
-            cursor: pointer;
-            transition: all 450ms;
-            border: none;
-            margin-top: 20px;
+            height: 46px;
+            justify-content: center;
+            margin: 20px auto 0;
+            text-align: center;
+            transition: all .45s;
+            width: 150px;
             &:hover{
                 transform: scale(1.1);
             }
+        }
+        @media only screen and (max-width: 650px){
+            padding: 30px 5px;
         }
     }
 }

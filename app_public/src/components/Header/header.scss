@@ -1,5 +1,10 @@
 header{
     background: #2e4064;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
     nav{
         padding: 12px 0;
         display: flex;
@@ -21,6 +26,7 @@ header{
             display: flex;
             justify-content: center;
             align-items: center;
+            margin-left: 20px;
             li{
                 margin-right: 25px;
                 &.usr-name{
