@@ -14,6 +14,7 @@ const Payment = () => {
         amount: 1.49
     })
     let { id } = useParams();
+    let { todoid } = useParams();
     const handleToken = token => {
         const body = {
             token,
@@ -30,7 +31,12 @@ const Payment = () => {
                         .then(res => {
                             const {status} = res;
                             if(status === 200){
-                                history.push("/todo/"+id);
+                                if(!todoid){
+                                    history.push("/todo/"+id);
+                                }
+                                else{
+                                    history.push("/detail-todo/"+todoid);
+                                }
                             }
                         })
                 }

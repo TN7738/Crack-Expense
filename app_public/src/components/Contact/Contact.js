@@ -54,24 +54,26 @@ class Contact extends React.Component {
 
         return (
             <div className="contact_wrapper">
-                <h1>Contact Us</h1>
-                <form onSubmit={this.onSubmit}>
-                    <p>
-                        <label>
-                            <input type="text" name="name" value={this.state.name} onChange={this.onChangeName} required placeholder="Name" />
-                        </label>
-                        <label>
-                            <input type="email" name="email" value={this.state.email} onChange={this.onChangeEmail} required placeholder="Email" />
-                        </label>
-                    </p>
-                    <p>
-                        <label>
-                            <span>Message: </span><textarea name="message" value={this.state.message} onChange={this.onChangeMessage} required placeholder="Write your message here"></textarea>
-                        </label>
-                    </p>
-                    <p><input type="submit" value="Submit" /></p>
-                </form>
-                <p className="success-msg">{this.state.successMsg}</p>
+                <div className="grid">
+                    <h1>Contact Us</h1>
+                    <form onSubmit={this.onSubmit}>
+                        <p>
+                            <label>
+                                <input type="text" name="name" value={this.state.name} onChange={this.onChangeName} required placeholder="Name" />
+                            </label>
+                            <label>
+                                <input type="email" name="email" value={this.state.email} onChange={this.onChangeEmail} required placeholder="Email" />
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                                <span>Message: </span><textarea name="message" value={this.state.message} onChange={this.onChangeMessage} required placeholder="Write your message here"></textarea>
+                            </label>
+                        </p>
+                        <p><input type="submit" value="Submit" /></p>
+                    </form>
+                    <p className="success-msg">{this.state.successMsg}</p>
+                </div>
             </div>
         );
     }
