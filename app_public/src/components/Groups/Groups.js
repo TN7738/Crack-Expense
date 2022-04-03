@@ -50,7 +50,7 @@ const Groups = () => {
                             <h4>Your Groups</h4>
                             <ul>
                                 {
-                                    groups == null || groups.length === 0 ? <li className='nogrps'>You don't have any groups yet</li> : groups.map(elem => <li className='grp' key={elem._id}><a href={'/group/' + elem._id}>{elem.groupName}</a></li>)
+                                    groups == null || groups.length === 0 ? <li className='nogrps no-grp'>You don't have any groups yet</li> : groups.map(elem => <li className='grp itm-stl' key={elem._id}><a href={'/group/' + elem._id}>{elem.groupName}</a></li>)
                                 }
                             </ul>
                         </div>
