@@ -7,4 +7,26 @@
         padding-bottom: 15px;
         text-transform: capitalize;
     }
+    .itm-stl{
+        a{
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            .exp-name{
+                font-size: 15px;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .exp-dt{
+                font-size: 10px;
+                margin-left: 12px;
+                background: #181818;
+                padding: 0 3px;
+                color: #f2f2f2;
+                border-radius: 3px;
+            }
+        }
+    }
 }

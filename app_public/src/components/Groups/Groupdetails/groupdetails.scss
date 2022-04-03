@@ -91,21 +91,28 @@
                     max-width: 300px;
                     text-align: center;
                     li{
-                        padding: 10px;
-                        margin-top: 15px;
-                        background: rgba(175, 169, 169, 0.6);
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        border-radius: 10px;
-                        font-size: 15px;
-                        font-weight: 600;
-                        &:first-child{
-                            margin-top: 0;
+                        &.itm-stl{
+                            padding: 10px;
+                            margin-top: 15px;
+                            background: rgba(175, 169, 169, 0.6);
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 10px;
+                            font-size: 15px;
+                            font-weight: 600;
+                            &:first-child{
+                                margin-top: 0;
+                            }
+                            a{
+                                text-decoration: none;
+                                color: #000;
+                            }
                         }
-                        a{
-                            text-decoration: none;
-                            color: #000;
+                        &.no-exp{
+                            font-size: 13px;
+                            color: #090909;
+                            font-weight: 700;
                         }
                     }
                     

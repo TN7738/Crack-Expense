@@ -34,7 +34,7 @@ const Listingtodo = (props) => {
             <h4>To-Dos</h4>
             <ul>
                 {
-                    todos === null || todos.length === 0 ? <li>You don't have any To-Dos yet</li> : todos.map(todo => <li key={todo._id}><a href={isPremium ? '/detail-todo/' + todo._id : '/payment/' + props.groupid + '/' + todo._id}>{todo.name}</a></li>)
+                    todos === null || todos.length === 0 ? <li className='no-exp'>You don't have any To-Dos yet</li> : todos.map(todo => <li key={todo._id} className='itm-stl'><a href={isPremium ? '/detail-todo/' + todo._id : '/payment/' + props.groupid + '/' + todo._id}>{todo.name}</a></li>)
                 }
             </ul>
         </div>
