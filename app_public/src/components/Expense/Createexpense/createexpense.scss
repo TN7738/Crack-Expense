@@ -1,4 +1,7 @@
 .create-exp-wrap{
+    .atf-wrap{
+        min-height: 870px;
+    }
     h4 {
         text-align: center;
         font-size: 24px;
@@ -11,7 +14,7 @@
         border: solid 1px #2E4064;
         border-radius: 30px;
         width: 100%;
-        max-width: 300px;
+        max-width: 400px;
         text-align: center;
         margin: 0 auto;
         input[type=text], input[type=number] {
@@ -25,10 +28,55 @@
             text-transform: capitalize;
         }
         input[type=number]{
-            margin-top: 5px;
             &::-webkit-outer-spin-button, &::-webkit-inner-spin-button {
                 -webkit-appearance: none;
                 margin: 0;
+            }
+        }
+        .amt-img-wrap{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px 0;
+            input[type=number]{
+                width: 130px;
+            }
+            .upload-wrap{
+                margin-left: 20px;
+                max-width: 150px;
+                width: 100%;
+                height: 150px;
+                border: solid 2px #c2c2c2;
+                border-radius: 5px;
+                position: relative;
+                img{
+                    position: absolute;
+                    &.prv{
+                        width: 100%;
+                        height: 100%;
+                        left: 0;
+                        top: 0;
+                        object-fit: cover;
+                        padding: 5px;
+                    }
+                    &.upld-btn{
+                        width: 45%;
+                        height: 45%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+                }
+                input{
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    left: 0;
+                    opacity: 0;
+                    cursor: pointer;
+                }
             }
         }
         .paid-by{
@@ -162,6 +210,20 @@
             transition: all 450ms;
             border: none;
             margin-top: 20px;
+        }
+    }
+    @media only screen and (max-width: 440px){
+        .atf-wrap {
+            min-height: 950px;
+            .inner-wrap{
+                padding: 20px;
+                .amt-img-wrap{
+                    flex-flow: column;
+                    .upload-wrap{
+                        margin: 20px 0 0 0;
+                    }
+                }
+            }
         }
     }
 }

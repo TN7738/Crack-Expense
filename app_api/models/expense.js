@@ -26,8 +26,7 @@ const expenseSchema = new mongoose.Schema({
         required: true
     },
     img: {
-        data: Buffer,
-        contentType: String,
+        type: String,
         required: false
     }
 });
