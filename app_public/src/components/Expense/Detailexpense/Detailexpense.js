@@ -5,6 +5,7 @@ import Header from '../../Header/Header';
 import Footer from "../../Footer/Footer";
 import axios from 'axios';
 import Cookies from 'universal-cookie';
+import Filebase64 from 'react-file-base64';
 
 const Detailexpense = () => {
     let history = useHistory();
@@ -22,6 +23,7 @@ const Detailexpense = () => {
     const [paidby, setPaidby] = useState([]);
     const [paidbyName, setPaidbyName] = useState("");
     const [amount, setAmount] = useState("");
+    const [img, setImg] = useState("");
     const [addedUsers, setAddedUsers] = useState([]);
     const [users, setUsers] = useState([]);
     React.useEffect(() => {
@@ -31,6 +33,7 @@ const Detailexpense = () => {
                 setName(res.data.name);
                 setAmount(res.data.amount);
                 setPaidby(res.data.paidby);
+                setImg(res.data.img);
                 return (
                     res.data.gmembers.forEach(elem => {
                         axios.get("/api/user/"+elem)
@@ -63,7 +66,8 @@ const Detailexpense = () => {
                 date: new Date(),
                 paidby: paidby,
                 gmembers: tmpUsrs,
-                amount: amount
+                amount: amount,
+                img: img
             };
             axios.put("/api/expense/"+id, expData)
                 .then(res => {
@@ -102,7 +106,16 @@ const Detailexpense = () => {
                     <div className='inner-wrap'>
                         <form onSubmit={e => { onSubmit(e) }}>
                             <input type="text" className="name" name="name" placeholder='Expense Name' value={name} onChange={e => setName(e.target.value)} required />
-                            <input type="number" className="amount" name="amount" placeholder='Total' value={amount} onChange={e => setAmount(e.target.value)} required />
+                            <div className='amt-img-wrap'>
+                                <input type="number" className="amount" name="amount" placeholder='Total' value={amount} onChange={e => setAmount(e.target.value)} required />
+                                <div className='upload-wrap'>
+                                    <img src={img !== "" ? img: '/images/upload.png'} className={img !== "" ? 'prv' : 'upld-btn'} alt='Uploaded-Image-Preview' />
+                                    <Filebase64 
+                                        multiple={false}
+                                        onDone={({base64}) => setImg(base64)}
+                                    />
+                                </div>
+                            </div>
                             <div className='paid-by'>
                                 <span className='ttl'>Paid by:</span> <span className='prsn'>{paidbyName === "undefined undefined" ? '' : paidbyName}</span>
                             </div>

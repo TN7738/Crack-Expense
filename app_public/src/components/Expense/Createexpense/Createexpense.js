@@ -5,6 +5,7 @@ import Header from '../../Header/Header';
 import Footer from "../../Footer/Footer";
 import axios from 'axios';
 import Cookies from 'universal-cookie';
+import Filebase64 from 'react-file-base64';
 
 const Expense = () => {
     let history = useHistory();
@@ -19,6 +20,7 @@ const Expense = () => {
     let { id } = useParams();
     const [name, setName] = useState("");
     const [amount, setAmount] = useState("");
+    const [img, setImg] = useState("");
     const [currUser, setCurrUser] = useState("");
     const [addedUsers, setAddedUsers] = useState([]);
     const [users, setUsers] = useState([]);
@@ -46,7 +48,8 @@ const Expense = () => {
                 date: new Date(),
                 paidby: uid,
                 gmembers: addedUsers,
-                amount: amount
+                amount: amount,
+                img: img
             };
 
             axios.post(`/api/expense`, expData)
@@ -76,7 +79,16 @@ const Expense = () => {
                     <div className='inner-wrap'>
                         <form onSubmit={e => { onSubmit(e) }}>
                             <input type="text" className="name" name="name" placeholder='Expense Name' value={name} onChange={e => setName(e.target.value)} required />
-                            <input type="number" className="amount" name="amount" placeholder='Total' value={amount} onChange={e => setAmount(e.target.value)} required />
+                            <div className='amt-img-wrap'>
+                                <input type="number" className="amount" name="amount" placeholder='Total' value={amount} onChange={e => setAmount(e.target.value)} required />
+                                <div className='upload-wrap'>
+                                    <img src={img !== "" ? img: '/images/upload.png'} className={img !== "" ? 'prv' : 'upld-btn'} alt='Uploaded-Image-Preview' />
+                                    <Filebase64 
+                                        multiple={false}
+                                        onDone={({base64}) => setImg(base64)}
+                                    />
+                                </div>
+                            </div>
                             <div className='paid-by'>
                                 <span className='ttl'>Paid by:</span> <span className='prsn'>{currUser}</span>
                             </div>
